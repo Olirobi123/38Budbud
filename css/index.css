@@ -20,7 +20,7 @@
 .content #pointsAuj td, .content #pointsAuj th{
     border: 1px solid black;
 }
-.content #pointsAuj .title{
+.title{
     background-color: black;
     color: white;
     text-transform: uppercase;
