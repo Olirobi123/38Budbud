@@ -76,13 +76,14 @@ nav li {
     display: inline-block;
     list-style: none;
 }
-
+nav a{
+    text-decoration: none;
+    color: white;
+}
 nav li a {
     font-size: 18px;
     text-transform: uppercase;
     padding: 0 30px;
-    text-decoration: none;
-    color: white;
 }
 /*
     GAMES
