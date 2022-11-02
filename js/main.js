@@ -4,10 +4,11 @@ function genererTrades(jsonData) {
     for (let i = tableau.length - 1; i < tableau.length && i > -1; i--) {
 
         let div = tradesDiv.appendChild(document.createElement("div"))
-        div.innerHTML = "<h2>Trade " + (i + 1) + "</h2>"
-        div.innerHTML += "<h3>" + tableau[i].team1 + "</h3><span>" + tableau[i].team2Receives +
-            "</span><h3>" + tableau[i].team2 + "</h3><span>" + tableau[i].team1Receives + "</span>"
+        div.innerHTML = "<h2>" + tableau[i].date + "</h2>"
+        div.innerHTML += "<h4>" + tableau[i].team1 + "</h4><span>" + tableau[i].team2Receives +
+            "</span><h4>" + tableau[i].team2 + "</h4><span>" + tableau[i].team1Receives + "</span>"
     }
+    tradesDiv.innerHTML += tableau.length + " échanges en 2022-2023"
 }
 
 function genererLiveGames() {
@@ -54,7 +55,7 @@ function genererLiveGames() {
                 home.innerHTML = game.gameData.teams.home.abbreviation
                 awayScore.innerHTML = game.liveData.linescore.teams.away.goals
                 homeScore.innerHTML = game.liveData.linescore.teams.home.goals
-                
+
                 if (game.gameData.status.abstractGameState !== "Preview")
                     time.innerHTML = game.liveData.linescore.currentPeriodOrdinal + '<br>' + game.liveData.linescore.currentPeriodTimeRemaining
                 else {
@@ -62,17 +63,15 @@ function genererLiveGames() {
                     time.innerHTML = date.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})
 
                 }
-
             }
         }
-
     }
-
 }
 
 function main() {
-    genererTrades(tradesJson)
     genererLiveGames();
+
+    genererTrades(tradesJson)
     setInterval(genererLiveGames, 300000)
 }
 
