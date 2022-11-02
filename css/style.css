@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.4s ease 0s;
+}
+
+table{
+    background-color: #181b23;
+    border-radius:5px ;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.content h1{
+    text-align: center;
+}
+#tradesDiv div {
+    /*border: 2px solid white;*/
+    padding-bottom: 7px;
+    border-radius: 1.5em;
+    text-align: center;
+    background-color: #181b23;
+
+}
+
+#tradesDiv :hover {
+    transform: translate(0px, -5px)
+}
+
+#tradesDiv h3 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#tradesDiv {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 10px;
+    width: 80%;
+    margin: auto;
+}
+
+
+/**
+    Header
+ */
+nav {
+    width: 100%;
+    height: 75px;
+    line-height: 75px;
+    padding: 0 100px;
+    top: 0;
+    background-color: #181b23;
+}
+
+nav .logo {
+    font-size: 30px;
+    font-weight: bold;
+    float: left;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+nav ul {
+    float: right;
+}
+
+nav li {
+    display: inline-block;
+    list-style: none;
+}
+
+nav li a {
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 0 30px;
+    text-decoration: none;
+    color: white;
+}
+/*
+    GAMES
+*/
+#live{
+    width: 100%;
+    height: 145px;
+    display: flex;
+    overflow-x:hidden;
+    overflow: auto;
+    
+}
+#live table{
+    /*border: 1px solid white;*/
+    height: 100%;
+    width: 100px;
+}
+#live span{
+    margin: 0 5px;
+    margin-top: 5px;
+}
+#live td{
+    padding: 0 5px;
+}
+#live th, #live td{
+    width: 100%;
+}
