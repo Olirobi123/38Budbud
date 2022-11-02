@@ -2,7 +2,6 @@
 
 * {
     margin: 0;
-    padding: 0;
     box-sizing: border-box;
     transition: all 0.4s ease 0s;
 }
@@ -82,7 +81,6 @@ nav li a {
     border: 1px solid #000;
 }
 #live table{
-    border: 1px solid #8080803d;
     height: 100%;
     width: 100px;
 }
