@@ -1,0 +1,29 @@
+
+#tradesDiv :hover {
+    transform: translate(0px, -5px)
+}
+
+#tradesDiv h4 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+#tradesDiv {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 10px;
+    width: 80%;
+    margin: auto;
+}
+.content h1{
+    text-align: center;
+}
+#tradesDiv div {
+    padding-bottom: 7px;
+    border-radius: 1.5em;
+    text-align: center;
+    background-color: #181b23;
+
+}
+
+

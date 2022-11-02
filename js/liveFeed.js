@@ -26,7 +26,7 @@ function genererLiveGames() {
                 }
 
                 let tableChildren = table.children
-                let time = tableChildren.item(0).appendChild(document.createElement("th"))
+                let time = table.firstElementChild.appendChild(document.createElement("th"))
                 let away = tableChildren.item(1).appendChild(document.createElement("td"))
                 let awayScore = tableChildren.item(1).appendChild(document.createElement("td"))
 
