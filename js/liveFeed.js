@@ -19,15 +19,16 @@ function getActivePlayerId(name) {
 }
 
 function creerTable() {
-    content.className = 'joueur'
     let table = content.appendChild(document.createElement('table'))
     table.id = 'statsJoueur'
+    statsJoueur.style.height = '0'
+    table.className = 'tablePrincipal'
     let tableHeader = statsJoueur.appendChild(document.createElement('thead'))
     tableHeader.id = 'tableHead'
     let premierTr = tableHead.appendChild(document.createElement('tr'))
     let nom = premierTr.appendChild(document.createElement('th'))
     nom.id = 'nomJoueur'
-    nom.setAttribute('colspan', '7')
+    nom.setAttribute('colspan', '8')
     nom.innerHTML = 'NOM'
     let deuxiemeTr = tableHead.appendChild(document.createElement('tr'))
     deuxiemeTr.id = 'headerTable'
@@ -45,6 +46,8 @@ function creerTable() {
     a.innerHTML = 'A'
     let pts = document.createElement('th')
     pts.innerHTML = 'PTS'
+    let ppg = document.createElement('th')
+    ppg.innerHTML = 'PPG'
     deuxiemeTr.appendChild(ann)
     deuxiemeTr.appendChild(equ)
     deuxiemeTr.appendChild(ligue)
@@ -52,18 +55,37 @@ function creerTable() {
     deuxiemeTr.appendChild(b)
     deuxiemeTr.appendChild(a)
     deuxiemeTr.appendChild(pts)
+    deuxiemeTr.appendChild(ppg)
 
     let tableBody = statsJoueur.appendChild(document.createElement('tbody'))
     tableBody.id = 'tbodyStats'
 }
 
+// function checkImage(url) {
+//     let request = new XMLHttpRequest();
+//     request.open("GET", proxy + url, false);
+//     request.send();
+//
+//     if (request.status === 200) {
+//         return true
+//     } else
+//         return false
+//
+// }
+
 function genererPageJoueur(id) {
+    content.style.height = 'unset'
     if (!isNaN(parseInt(id))) {
         if (!document.getElementById('statsJoueur')) {
             content.innerHTML = ''
             creerTable();
-        } else
+        } else {
             tbodyStats.innerHTML = ''
+            infoJoueur.remove();
+        }
+        if (document.querySelector('#tradesSection h1')){
+            document.querySelector('#tradesSection h1').remove();
+        }
 
         //REQUEST
         let player = new XMLHttpRequest();
@@ -76,8 +98,11 @@ function genererPageJoueur(id) {
         name.send();
 
         nomJoueur.innerHTML = JSON.parse(name.response).people[0].fullName
+        let cPj = 0
+        let cBut = 0
+        let cA = 0;
+        let cPts = 0;
         for (let i = 0; i < arraySeasons.length; i++) {
-
             if (arraySeasons[i].league.name === 'National Hockey League') {
                 let tr = tbodyStats.appendChild(document.createElement("tr"))
                 let season = tr.appendChild(document.createElement("td"))
@@ -86,21 +111,84 @@ function genererPageJoueur(id) {
                 team.innerHTML = arraySeasons[i].team.name
 
                 let league = tr.appendChild(document.createElement("td"))
-                league.innerHTML = arraySeasons[i].league.name
+                league.innerHTML = 'NHL'
 
+                let pjStat = arraySeasons[i].stat.games
+                cPj += pjStat
                 let pj = tr.appendChild(document.createElement("td"))
-                pj.innerHTML = arraySeasons[i].stat.games
+                pj.innerHTML = pjStat
 
+                cBut += arraySeasons[i].stat.goals
                 let goals = tr.appendChild(document.createElement("td"))
                 goals.innerHTML = arraySeasons[i].stat.goals.toString()
 
+                cA += arraySeasons[i].stat.assists
                 let passes = tr.appendChild(document.createElement("td"))
                 passes.innerHTML = arraySeasons[i].stat.assists.toString()
 
+                let ptsStat = arraySeasons[i].stat.points
+                cPts += ptsStat
                 let points = tr.appendChild(document.createElement("td"))
-                points.innerHTML = arraySeasons[i].stat.points.toString()
+                points.innerHTML = ptsStat.toString()
+
+                let ppgStat = 0
+                if (pjStat >= 1)
+                    ppgStat = ((ptsStat / pjStat).toFixed(2))
+                let ppg = tr.appendChild(document.createElement("td"))
+                ppg.innerHTML = ppgStat.toString()
             }
         }
+        let totalTr = tbodyStats.appendChild(document.createElement("tr"))
+        let total = totalTr.appendChild(document.createElement('th'))
+        total.innerHTML = 'Total dans la NHL'
+        total.setAttribute('colSpan', 3)
+
+        let pj = totalTr.appendChild(document.createElement('th'))
+        pj.innerHTML = cPj.toString()
+
+        let b = totalTr.appendChild(document.createElement('th'))
+        b.innerHTML = cBut.toString()
+
+        let a = totalTr.appendChild(document.createElement('th'))
+        a.innerHTML = cA.toString()
+
+        let pts = totalTr.appendChild(document.createElement('th'))
+        pts.innerHTML = cPts
+
+        let cPpg = 0;
+        if (cPj >= 1)
+            cPpg = (cPts / cPj).toFixed(2)
+        let ppg = totalTr.appendChild(document.createElement('th'))
+        ppg.innerHTML = cPpg.toString()
+
+
+        //Creation info Joueur
+        let info = content.appendChild(document.createElement('table'))
+        info.id = 'infoJoueur'
+        let tr = info.appendChild(document.createElement("tr"))
+        tr.id = 'premierTr'
+        let thHeadPicture = tr.appendChild(document.createElement('th'))
+        let picture = thHeadPicture.appendChild(document.createElement('img'))
+
+        picture.src = 'https://nhl.bamcontent.com/images/headshots/current/168x168/' + id + '.jpg'
+        picture.alt = "Photo indisponible pour les joueurs pas dans la AHL et NHL"
+        thHeadPicture.setAttribute('rowSpan', '3')
+        thHeadPicture.setAttribute('width', '168px')
+        picture.id = 'imgJoueur'
+        let thHead = tr.appendChild(document.createElement('th'))
+        thHead.innerHTML = JSON.parse(name.response).people[0].fullName
+        thHead.id = 'titreInfo'
+        thHead.setAttribute('colSpan', '2')
+        let tbodyPremierTr = info.appendChild(document.createElement('tr'))
+        let positions = tbodyPremierTr.appendChild(document.createElement('td'))
+        let rightVsLeft = 'Left'
+        if (JSON.parse(name.response).people[0].shootsCatches === 'R')
+            rightVsLeft = 'Right'
+        positions.innerHTML = JSON.parse(name.response).people[0].primaryPosition.name + ' | ' + 'Shoots: ' + rightVsLeft
+
+        let tbodyDeuxTr = info.appendChild(document.createElement('tr'))
+        let age = tbodyDeuxTr.appendChild(document.createElement('td'))
+        age.innerHTML = JSON.parse(name.response).people[0].currentAge + ' ans'
     }
 }
 

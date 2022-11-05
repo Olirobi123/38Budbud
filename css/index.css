@@ -1,26 +1,5 @@
-#content{
-    width: 98vw;
-    height: 80vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr;
-    gap: 10px;
-    padding: 10px;
-    box-sizing: border-box;
-}
-#content div {
-    border: 2px solid white;
-}
-#content #pointsAuj{
-    grid-row-start: 1;
-    grid-row-end: span 2;
-    grid-column-start: 1;
-    grid-column-end: span 2;
-}
-#content #pointsAuj td, .content #pointsAuj th{
-    border: 1px solid black;
-}
-.title{
+
+.title {
     background-color: black;
     color: white;
     text-transform: uppercase;
@@ -28,25 +7,31 @@
     border-radius: 12px 12px;
     height: 1vh;
 }
-#pointsAuj tr td:first-of-type{
+
+#pointsAuj tr td:first-of-type {
     text-align: center;
 }
-#pointsAuj tr td{
+
+#pointsAuj tr td {
     height: 9vh;
     padding: 5px;
 }
-#dernierEchange tr td{
+
+#dernierEchange tr td {
     text-align: center;
 }
-#content a{
+
+#content a {
     width: 100%;
     text-decoration: none;
     color: white;
 }
-#content a #dernierEchange{
+
+#content a #dernierEchange {
     width: 100%;
 }
-#dernierEchange:hover{
+
+#dernierEchange:hover {
     transform: translate(0px, -5px);
 }
 
