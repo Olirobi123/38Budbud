@@ -245,7 +245,7 @@ function genererPageJoueur(id) {
         let thHeadPicture = tr.appendChild(document.createElement('th'))
         let picture = thHeadPicture.appendChild(document.createElement('img'))
 
-        picture.src = 'http://nhl.bamcontent.com/images/headshots/current/168x168/' + id + '.jpg'
+        picture.src = proxy + 'http://nhl.bamcontent.com/images/headshots/current/168x168/' + id + '.jpg'
         picture.alt = "Photo indisponible pour les joueurs pas dans la AHL et NHL"
         thHeadPicture.setAttribute('rowSpan', '3')
         thHeadPicture.setAttribute('width', '168px')
