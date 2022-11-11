@@ -51,6 +51,13 @@ let tradesJson = {
                 "team1Receives": "Bowen Byram<br>Jake Sanderson<br>Timo Meier<br>Elias Lindholm<br>2nd round pick 2023",
                 "team2": NADO,
                 "team2Receives": "Sebastian Aho<br>Logan Thompson<br>2nd round pick 2024"
+            },
+            {
+                "date": "10 novembre",
+                "team1": SAM,
+                "team1Receives": "Erik Karlsson<br>Alex Ovechkin",
+                "team2": CO,
+                "team2Receives": "Mikko Rantanen<br>Jakub Chykrun"
             }
         ]
     }
