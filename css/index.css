@@ -35,3 +35,24 @@
     transform: translate(0px, -5px);
 }
 
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+    #content .tablePrincipal {
+        grid-row-start: 2;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: span 3;
+    }
+
+    #content {
+        grid-template: unset;
+        grid-template-rows: unset;
+    }
+
+    #infoJoueur {
+        grid-row-start: 1;
+        grid-row-end: 1;
+        grid-column-start: 1;
+    }
+}

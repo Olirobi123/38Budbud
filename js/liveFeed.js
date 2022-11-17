@@ -21,7 +21,6 @@ function getActivePlayerId(name) {
 function creerTable() {
     let table = content.appendChild(document.createElement('table'))
     table.id = 'statsJoueur'
-    statsJoueur.style.height = '0'
     table.className = 'tablePrincipal'
     let tableHeader = statsJoueur.appendChild(document.createElement('thead'))
     tableHeader.id = 'tableHead'
