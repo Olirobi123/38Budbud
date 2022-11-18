@@ -1,210 +1,211 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&display=swap");
 
 * {
-    margin: 0;
-    box-sizing: border-box;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 table {
-    background-color: #181b23;
-    border-radius: 5px;
-    /*border: 1px solid #8080803d;*/
+	background-color: #181b23;
+	border-radius: 5px;
+	/*border: 1px solid #8080803d;*/
 }
 
 body {
-    background-color: black;
-    color: white;
-    font-family: 'Poppins', sans-serif;
+	background-color: black;
+	color: white;
+	font-family: "Poppins", sans-serif;
 }
 
 /**
     Header
  */
 nav {
-    width: 100%;
-    height: 75px;
-    line-height: 75px;
-    padding: 0 100px;
-    top: 0;
-    background-color: #181b23;
+	width: 100%;
+	height: 75px;
+	line-height: 75px;
+	padding: 0 100px;
+	top: 0;
+	background-color: #181b23;
 }
 
 nav .logo {
-    font-size: 30px;
-    font-weight: bold;
-    float: left;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    cursor: pointer;
+	font-size: 30px;
+	font-weight: bold;
+	float: left;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	cursor: pointer;
 }
 
 nav ul {
-    float: right;
+	float: right;
 }
 
 nav li {
-    display: inline-block;
-    list-style: none;
+	display: inline-block;
+	list-style: none;
 }
 
 nav a {
-    text-decoration: none;
-    color: white;
+	text-decoration: none;
+	color: white;
 }
 
 nav li a {
-    font-size: 18px;
-    text-transform: uppercase;
-    padding: 0 30px;
+	font-size: 18px;
+	text-transform: uppercase;
+	padding: 0 30px;
 }
 
 #rechercheJoueur {
-    border-radius: 50px;
-    height: 30px;
+	border-radius: 50px;
+	height: 30px;
 }
 
-#statsJoueur td, #statsJoueur th {
-    border: 1px solid black;
-    padding: 5px;
-    text-align: center;
+#statsJoueur td,
+#statsJoueur th {
+	border: 1px solid black;
+	padding: 5px;
+	text-align: center;
 }
 
 #statsJoueur {
-    padding: 0;
-    border-collapse: collapse;
+	padding: 0;
+	border-collapse: collapse;
 }
 
 #infoJoueur {
-    padding: 0;
-    border-collapse: collapse;
-    height: 0;
+	padding: 0;
+	border-collapse: collapse;
+	height: 0;
 }
 
 #imgJoueur {
-    width: 168px;
-    height: 100%;
-    float: left;
-    border-radius: 5px;
-    padding-right: 15px;
+	width: 168px;
+	height: 100%;
+	float: left;
+	border-radius: 5px;
+	padding-right: 15px;
 }
 
 #titreInfo {
-    text-align: left;
+	text-align: left;
 }
 
 #premierTr {
-    height: 80px;
+	height: 80px;
 }
 
 /*
     GAMES
 */
 #live {
-    width: 100%;
-    height: 145px;
-    display: flex;
-    overflow: auto;
+	width: 100%;
+	height: 145px;
+	display: flex;
+	overflow: auto;
 }
 
 /*Scrollbar*/
 #live::-webkit-scrollbar-track {
-    border: 1px solid #000;
-    padding: 2px 0;
-    background-color: #404040;
+	border: 1px solid #000;
+	padding: 2px 0;
+	background-color: #404040;
 }
 
 #live::-webkit-scrollbar {
-    width: 10px;
+	width: 10px;
 }
 
 #live::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-    background-color: #737272;
-    border: 1px solid #000;
+	border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #737272;
+	border: 1px solid #000;
 }
 
 #live table {
-    height: 100%;
-    width: 100px;
+	height: 100%;
+	width: 100px;
 }
 
 #live span {
-    margin: 0 5px;
-    margin-top: 5px;
+	margin: 0 5px;
+	margin-top: 5px;
 }
 
 #live td {
-    padding: 0 5px;
+	padding: 0 5px;
 }
 
-#live th, #live td {
-    width: 100%;
+#live th,
+#live td {
+	width: 100%;
 }
-
 
 #content {
-    width: 98vw;
-    height: 80vh;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr;
-    gap: 10px;
-    padding: 10px;
-    box-sizing: border-box;
+	width: 98vw;
+	height: 80vh;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr 1fr;
+	gap: 10px;
+	padding: 10px;
+	box-sizing: border-box;
 }
 
 #content .tablePrincipal {
-    grid-row-start: 1;
-    grid-row-end: span 2;
-    grid-column-start: 1;
-    grid-column-end: span 2;
-    width: 100%;
-    height: 0;
+	grid-row-start: 1;
+	grid-row-end: span 2;
+	grid-column-start: 1;
+	grid-column-end: span 2;
+	width: 100%;
+	height: 0;
 }
 
-#content #pointsAuj td, #content #pointsAuj th {
-    border: 1px solid black;
+#content #pointsAuj td,
+#content #pointsAuj th {
+	border: 1px solid black;
 }
 
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 480px) {
-    #content .tablePrincipal {
-        grid-row-start: 2;
-        grid-row-end: 2;
-        grid-column-start: 1;
-        grid-column-end: span 3;
-    }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	#content .tablePrincipal {
+		grid-row-start: 2;
+		grid-row-end: 2;
+		grid-column-start: 1;
+		grid-column-end: span 3;
+	}
 
-    header nav{
-        height: 100px;
-        line-height: 100px;
-        padding: 0 50px;
-    }
-    header .logo{
-        font-size: 35px;
-    }
+	header nav {
+		height: 100px;
+		line-height: 100px;
+		padding: 0 50px;
+	}
+	header .logo {
+		font-size: 35px;
+	}
 
-    #content {
-        grid-template: unset;
-        grid-template-rows: unset;
-    }
-    #imgJoueur{
-        width: 200px;
-    }
+	#content {
+		grid-template: unset;
+		grid-template-rows: unset;
+	}
+	#imgJoueur {
+		/*width: 200px;*/
+	}
 
-    #infoJoueur {
-        grid-row-start: 1;
-        grid-row-end: 1;
-        grid-column-start: 1;    
-        font-size: xx-large;
-        height: 200px;
-    }
-
+	#infoJoueur {
+		grid-row-start: 1;
+		grid-row-end: 1;
+		grid-column-start: 1;
+		/*  font-size: xx-large;
+        height: 200px;*/
+	}
+	/*
     #statsJoueur thead tr th, #statsJoueur tbody td, #statsJoueur tbody tr th{
         font-size: x-large;
         padding-top: 10px;
         padding-bottom: 10px;
     }
+    */
 }
