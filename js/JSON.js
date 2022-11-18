@@ -60,7 +60,7 @@ let tradesJson = {
                 "team2Receives": "Mikko Rantanen<br>Jakub Chykrun"
             },
             {
-                "date": "17 novembre",
+                "date": "15 novembre",
                 "team1": NADO,
                 "team1Receives": "Alex Pietrangelo<br>Brent Burns",
                 "team2": TALBOT,
