@@ -174,7 +174,7 @@ nav li a {
 		grid-row-start: 2;
 		grid-row-end: 2;
 		grid-column-start: 1;
-		grid-column-end: span 3;
+		width: 100%;
 	}
 
 	header nav {
@@ -201,11 +201,12 @@ nav li a {
 		/*  font-size: xx-large;
         height: 200px;*/
 	}
-	/*
+	
     #statsJoueur thead tr th, #statsJoueur tbody td, #statsJoueur tbody tr th{
-        font-size: x-large;
         padding-top: 10px;
         padding-bottom: 10px;
+		padding-left: 0;
+		padding-right: 0;
     }
-    */
+    
 }
