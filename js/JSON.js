@@ -13,7 +13,7 @@ let tradesJson = {
             {
                 "date": "23 octobre",
                 "team1": CO,
-                "team1Receives": "Nico Hischier<br>Sergei Bobrosky",
+                "team1Receives": "Nico Hischier<br>Sergei Bobrovsky",
                 "team2": ANTHO,
                 "team2Receives": "Seth Jarvis<br>Igor Shesterkin<br>"
             },
@@ -58,6 +58,13 @@ let tradesJson = {
                 "team1Receives": "Erik Karlsson<br>Alex Ovechkin",
                 "team2": CO,
                 "team2Receives": "Mikko Rantanen<br>Jakub Chykrun"
+            },
+            {
+                "date": "17 novembre",
+                "team1": ANTHO,
+                "team1Receives": "Jack Hughes<br>Jesper Bratt<br>Sergei Bobrovsky<br>2nd round pick 2023",
+                "team2": CO,
+                "team2Receives": "Auston Matthews<br>Andrei Vasilevskiy<br>Devon Toews"
             }
         ]
     }
