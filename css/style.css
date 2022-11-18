@@ -175,6 +175,7 @@ nav li a {
 		grid-row-end: 2;
 		grid-column-start: 1;
 		width: 100%;
+		font-size: 11px;
 	}
 
 	header nav {
@@ -190,23 +191,14 @@ nav li a {
 		grid-template: unset;
 		grid-template-rows: unset;
 	}
-	#imgJoueur {
-		/*width: 200px;*/
-	}
-
 	#infoJoueur {
 		grid-row-start: 1;
 		grid-row-end: 1;
 		grid-column-start: 1;
-		/*  font-size: xx-large;
-        height: 200px;*/
 	}
-	
     #statsJoueur thead tr th, #statsJoueur tbody td, #statsJoueur tbody tr th{
-        padding-top: 10px;
-        padding-bottom: 10px;
-		padding-left: 0;
-		padding-right: 0;
+        padding-top: 0px;
+        padding-bottom: 0px;
     }
     
 }
