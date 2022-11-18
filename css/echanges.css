@@ -16,6 +16,7 @@
     border-radius: 1.5em;
     text-align: center;
     background-color: #181b23;
+    transition: all 0.4s ease 0s;
 }
 #tradesSection h1{
     text-align: center;
