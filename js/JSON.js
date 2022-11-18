@@ -61,6 +61,13 @@ let tradesJson = {
             },
             {
                 "date": "17 novembre",
+                "team1": NADO,
+                "team1Receives": "Alex Pietrangelo<br>Brent Burns",
+                "team2": TALBOT,
+                "team2Receives": "Owen Power<br>Nikolaj Elhers"
+            },
+            {
+                "date": "17 novembre",
                 "team1": ANTHO,
                 "team1Receives": "Jack Hughes<br>Jesper Bratt<br>Sergei Bobrovsky<br>2nd round pick 2023",
                 "team2": CO,
