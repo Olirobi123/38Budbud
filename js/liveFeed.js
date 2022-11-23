@@ -15,7 +15,13 @@ function getActivePlayerId(name) {
     player.open('GET', proxy + 'https://suggest.svc.nhl.com/svc/suggest/v1/minactiveplayers/' + name + '/1', false)
     player.send();
 
-    return parseInt(JSON.parse(player.response).suggestions[0].slice(0, 7))
+    let returnValue = false
+    try{
+        returnValue = parseInt(JSON.parse(player.response).suggestions[0].slice(0, 7));
+    }catch(error){
+        alert('Le joueur suivant n\'exite pas.\nVérifiez si le joueur est apte a être selectionné par un club de la 38Budbud. Si oui, vérifiez l\'ortographe')
+    }
+    return returnValue
 }
 
 function creerTable() {
@@ -58,6 +64,7 @@ function creerTable() {
 function genererPageJoueur(id) {
     content.style.height = 'unset'
     if (!isNaN(parseInt(id))) {
+        rechercheJoueur.value = '';
         if (!document.getElementById('statsJoueur')) {
             content.innerHTML = ''
             creerTable();
@@ -67,6 +74,8 @@ function genererPageJoueur(id) {
         }
         if (document.querySelector('#tradesSection h1')) {
             document.querySelector('#tradesSection h1').remove();
+        }else if (document.querySelector('#draftSection h1')){
+            document.querySelector('#draftSection h1').remove();
         }
 
         //REQUEST
@@ -257,6 +266,7 @@ function genererPageJoueur(id) {
         let tbodyDeuxTr = info.appendChild(document.createElement('tr'))
         let age = tbodyDeuxTr.appendChild(document.createElement('td'))
         age.innerHTML = JSON.parse(name.response).people[0].currentAge + ' ans'
+    }else{
     }
 }
 
