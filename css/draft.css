@@ -1,0 +1,14 @@
+.tableDraft tr td, .tableDraft tr th{
+    padding: 5px;
+    border: 2px solid black;
+}
+.tableDraft{
+    border-collapse: collapse;
+    border-radius: 10px;
+}
+.choix{
+    text-align: center
+}
+#draftSection h1{
+    text-align: center;
+}
