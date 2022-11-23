@@ -24,11 +24,6 @@ function creerTable() {
     table.className = 'tablePrincipal'
     let tableHeader = statsJoueur.appendChild(document.createElement('thead'))
     tableHeader.id = 'tableHead'
-    let premierTr = tableHead.appendChild(document.createElement('tr'))
-    let nom = premierTr.appendChild(document.createElement('th'))
-    nom.id = 'nomJoueur'
-    nom.setAttribute('colspan', '8')
-    nom.innerHTML = 'NOM'
     let deuxiemeTr = tableHead.appendChild(document.createElement('tr'))
     deuxiemeTr.id = 'headerTable'
     let ann = document.createElement('th')
@@ -84,7 +79,6 @@ function genererPageJoueur(id) {
         name.open('GET', 'https://statsapi.web.nhl.com/api/v1/people/' + id, false)
         name.send();
 
-        nomJoueur.innerHTML = JSON.parse(name.response).people[0].fullName
         let cPj = 0
         let cBut = 0
         let cA = 0;
@@ -278,7 +272,7 @@ function genererLiveGames() {
         if (matchs.length > 0) {
             for (let i = 0; i < matchs.length; i++) {
                 let span = live.appendChild(document.createElement("span"))
-                span.id = '' + i + ''
+                span.id = i.toString();
                 let table = span.appendChild(document.createElement("table"))
                 table.className = "tableLive";
                 table.setAttribute("cellpading", "0")

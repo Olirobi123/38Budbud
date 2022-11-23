@@ -59,8 +59,14 @@ nav li a {
 }
 
 #rechercheJoueur {
-	border-radius: 50px;
 	height: 30px;
+	border-radius: 5px;
+	background-color: black;
+	border: 3px solid #181b23;
+	color: white;
+}
+::placeholder{
+	color: white;
 }
 
 #statsJoueur td,
@@ -179,12 +185,10 @@ nav li a {
 	}
 
 	header nav {
-		height: 100px;
-		line-height: 100px;
 		padding: 0 50px;
 	}
 	header .logo {
-		font-size: 35px;
+		font-size: 27px;
 	}
 
 	#content {
@@ -196,9 +200,16 @@ nav li a {
 		grid-row-end: 1;
 		grid-column-start: 1;
 	}
-    #statsJoueur thead tr th, #statsJoueur tbody td, #statsJoueur tbody tr th{
-        padding-top: 0px;
-        padding-bottom: 0px;
-    }
-    
+	ul li:not(#li-recherche) {
+		display: none;
+	}
+	nav ul li{
+		position: absolute;
+		top: 225px;
+		left: 25%;
+	}
+	#live{
+		margin-bottom: 70px;
+
+	}
 }
