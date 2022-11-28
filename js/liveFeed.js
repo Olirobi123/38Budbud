@@ -8,6 +8,9 @@ function liveFeed() {
             genererPageJoueur(getActivePlayerId(rechercheJoueur.value));
         }
     });
+    document.getElementById('hamberger-icon').addEventListener('click', function (e){
+        document.getElementById('mobile-menu').style.display = 'block'
+    });
 }
 
 function getActivePlayerId(name) {
