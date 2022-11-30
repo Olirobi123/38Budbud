@@ -12,3 +12,6 @@
 #draftSection h1{
     text-align: center;
 }
+.nomChoix{
+    cursor: pointer;
+}

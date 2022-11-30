@@ -57,7 +57,7 @@ let repechage2022_2023 = {
 	],
 	"Consanguins de Laterrière": [
 		"Auston Matthews",
-		"Andrei Vasilevsky",
+		"Andrei Vasilevskiy",
 		"Aleksander Barkov",
 		"Johnny Gaudreau",
 		"Jack Campbell",

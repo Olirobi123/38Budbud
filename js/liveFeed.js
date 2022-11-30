@@ -39,7 +39,7 @@ function getActivePlayerId(name) {
     return returnValue
 }
 
-function creerTable() {
+function creerTable(position) {
     let table = content.appendChild(document.createElement('table'))
     table.id = 'statsJoueur'
     table.className = 'tablePrincipal'
@@ -55,22 +55,46 @@ function creerTable() {
     ligue.innerHTML = 'Ligue'
     let pj = document.createElement('th')
     pj.innerHTML = 'PJ'
-    let b = document.createElement('th')
-    b.innerHTML = 'B'
-    let a = document.createElement('th')
-    a.innerHTML = 'A'
-    let pts = document.createElement('th')
-    pts.innerHTML = 'PTS'
-    let ppg = document.createElement('th')
-    ppg.innerHTML = 'PPG'
     deuxiemeTr.appendChild(ann)
     deuxiemeTr.appendChild(equ)
     deuxiemeTr.appendChild(ligue)
     deuxiemeTr.appendChild(pj)
-    deuxiemeTr.appendChild(b)
-    deuxiemeTr.appendChild(a)
-    deuxiemeTr.appendChild(pts)
-    deuxiemeTr.appendChild(ppg)
+    //Patineur
+    if (position !== 'G'){
+        let b = document.createElement('th')
+        b.innerHTML = 'B'
+        let a = document.createElement('th')
+        a.innerHTML = 'A'
+        let pts = document.createElement('th')
+        pts.innerHTML = 'PTS'
+        let ppg = document.createElement('th')
+        ppg.innerHTML = 'PPG'
+        deuxiemeTr.appendChild(b)
+        deuxiemeTr.appendChild(a)
+        deuxiemeTr.appendChild(pts)
+        deuxiemeTr.appendChild(ppg)
+    }else {
+        //Gardiens
+        let victoires = document.createElement('th')
+        victoires.innerHTML = 'V'
+        let l = document.createElement('th')
+        l.innerHTML = 'L'
+        let bl = document.createElement('th')
+        bl.innerHTML = 'BL'
+        let gaa = document.createElement('th')
+        gaa.innerHTML = 'GAA'
+        let pct = document.createElement('th')
+        pct.innerHTML = 'PCT'
+
+        deuxiemeTr.appendChild(victoires)
+        deuxiemeTr.appendChild(l)
+        deuxiemeTr.appendChild(bl)
+        deuxiemeTr.appendChild(gaa)
+        deuxiemeTr.appendChild(pct)
+    }
+
+
+
 
     let tableBody = statsJoueur.appendChild(document.createElement('tbody'))
     tableBody.id = 'tbodyStats'
@@ -80,13 +104,6 @@ function genererPageJoueur(id) {
     content.style.height = 'unset'
     if (!isNaN(parseInt(id))) {
         rechercheJoueur.value = '';
-        if (!document.getElementById('statsJoueur')) {
-            content.innerHTML = ''
-            creerTable();
-        } else {
-            tbodyStats.innerHTML = ''
-            infoJoueur.remove();
-        }
         if (document.querySelector('#tradesSection h1')) {
             document.querySelector('#tradesSection h1').remove();
         }else if (document.querySelector('#draftSection h1')){
@@ -102,156 +119,259 @@ function genererPageJoueur(id) {
         let name = new XMLHttpRequest()
         name.open('GET', 'https://statsapi.web.nhl.com/api/v1/people/' + id, false)
         name.send();
+        let codePosition = JSON.parse(name.response).people[0].primaryPosition.abbreviation
+        content.innerHTML = ''
+        creerTable(codePosition);
+        if (codePosition !== 'G'){
+            let cPj = 0
+            let cBut = 0
+            let cA = 0;
+            let cPts = 0;
+            for (let i = 0; i < arraySeasons.length; i++) {
+                let ok = false;
+                let ligue = ''
+                switch (arraySeasons[i].league.name) {
+                    case ('National Hockey League'):
+                        ok = true
+                        ligue = 'NHL'
+                        break;
+                    case ('AHL'):
+                        ok = true
+                        ligue = 'AHL'
+                        break
+                    case ('KHL'):
+                        ok = true
+                        ligue = 'KHL'
+                        break
+                    case ('Russia'):
+                        ok = true
+                        ligue = 'Russia'
+                        break
+                    case ('QMJHL'):
+                        ok = true;
+                        ligue = 'LHJMQ'
+                        break;
+                    case ('WHL'):
+                        ok = true
+                        ligue = 'WHL'
+                        break
+                    case ('OHL'):
+                        ok = true
+                        ligue = 'OHL'
+                        break;
 
-        let cPj = 0
-        let cBut = 0
-        let cA = 0;
-        let cPts = 0;
-        for (let i = 0; i < arraySeasons.length; i++) {
-            let ok = false;
-            let ligue = ''
-            switch (arraySeasons[i].league.name) {
-                case ('National Hockey League'):
-                    ok = true
-                    ligue = 'NHL'
-                    break;
-                case ('AHL'):
-                    ok = true
-                    ligue = 'AHL'
-                    break
-                case ('KHL'):
-                    ok = true
-                    ligue = 'KHL'
-                    break
-                case ('Russia'):
-                    ok = true
-                    ligue = 'Russia'
-                    break
-                case ('QMJHL'):
-                    ok = true;
-                    ligue = 'LHJMQ'
-                    break;
-                case ('WHL'):
-                    ok = true
-                    ligue = 'WHL'
-                    break
-                case ('OHL'):
-                    ok = true
-                    ligue = 'OHL'
-                    break;
+                    case ('NCAA'):
+                        ok = true
+                        ligue = 'NCAA'
+                        break;
+                    case ('USDP'):
+                        ok = true
+                        ligue = 'USDP'
+                        break;
+                    case ('USHL'):
+                        ok = true
+                        ligue = 'USHL'
+                        break;
+                    case ('SHL'):
+                        ok = true;
+                        ligue = 'SHL'
+                        break;
+                    case ('Sweden'):
+                        ok = true;
+                        ligue = 'Sweden'
+                        break;
+                    case ('Liiga'):
+                        ok = true
+                        ligue = 'Liiga'
+                        break;
+                    case ('Finland'):
+                        ok = true
+                        ligue = 'Liiga'
+                        break;
+                    case ('Slovakia'):
+                        ok = true
+                        ligue = 'Slovak'
+                        break;
+                    case ('ECHL'):
+                        ok = true
+                        ligue = 'ECHL'
+                        break
+                    case ('ECAC'):
+                        ok = true
+                        ligue = 'ECAC'
+                        break;
+                    case ('DEL'):
+                        ok = true
+                        ligue = 'DEL'
+                        break
+                }
+                if (ok) {
+                    let tr = tbodyStats.appendChild(document.createElement("tr"))
+                    let season = tr.appendChild(document.createElement("td"))
+                    season.innerHTML = arraySeasons[i].season.slice(0, 4) + '-' + arraySeasons[i].season.slice(4);
+                    let team = tr.appendChild(document.createElement("td"))
+                    team.innerHTML = arraySeasons[i].team.name
 
-                case ('NCAA'):
-                    ok = true
-                    ligue = 'NCAA'
-                    break;
-                case ('USDP'):
-                    ok = true
-                    ligue = 'USDP'
-                    break;
-                case ('USHL'):
-                    ok = true
-                    ligue = 'USHL'
-                    break;
-                case ('SHL'):
-                    ok = true;
-                    ligue = 'SHL'
-                    break;
-                case ('Sweden'):
-                    ok = true;
-                    ligue = 'Sweden'
-                    break;
-                case ('Liiga'):
-                    ok = true
-                    ligue = 'Liiga'
-                    break;
-                case ('Finland'):
-                    ok = true
-                    ligue = 'Liiga'
-                    break;
-                case ('Slovakia'):
-                    ok = true
-                    ligue = 'Slovak'
-                    break;
-                case ('ECHL'):
-                    ok = true
-                    ligue = 'ECHL'
-                    break
-                case ('ECAC'):
-                    ok = true
-                    ligue = 'ECAC'
-                    break;
-                case ('DEL'):
-                    ok = true
-                    ligue = 'DEL'
-                    break
+                    let league = tr.appendChild(document.createElement("td"))
+                    league.innerHTML = ligue
+
+                    let pjStat = arraySeasons[i].stat.games
+
+                    if (ligue === 'NHL') {
+                        cPj += pjStat
+                    }
+                    let pj = tr.appendChild(document.createElement("td"))
+                    pj.innerHTML = pjStat
+
+
+                    if (ligue === 'NHL') {
+                        cBut += arraySeasons[i].stat.goals
+                    }
+                    let goals = tr.appendChild(document.createElement("td"))
+                    goals.innerHTML = arraySeasons[i].stat.goals.toString()
+
+                    if (ligue === 'NHL') {
+                        cA += arraySeasons[i].stat.assists
+                    }
+                    let passes = tr.appendChild(document.createElement("td"))
+                    passes.innerHTML = arraySeasons[i].stat.assists.toString()
+
+                    let ptsStat = arraySeasons[i].stat.points
+                    if (ligue === 'NHL') {
+                        cPts += ptsStat
+                    }
+                    let points = tr.appendChild(document.createElement("td"))
+                    points.innerHTML = ptsStat.toString()
+
+                    let ppgStat = 0
+                    if (pjStat >= 1)
+                        ppgStat = ((ptsStat / pjStat).toFixed(2))
+                    let ppg = tr.appendChild(document.createElement("td"))
+                    ppg.innerHTML = ppgStat.toString()
+                }
             }
-            if (ok) {
-                let tr = tbodyStats.appendChild(document.createElement("tr"))
-                let season = tr.appendChild(document.createElement("td"))
-                season.innerHTML = arraySeasons[i].season.slice(0, 4) + '-' + arraySeasons[i].season.slice(4);
-                let team = tr.appendChild(document.createElement("td"))
-                team.innerHTML = arraySeasons[i].team.name
+            let totalTr = tbodyStats.appendChild(document.createElement("tr"))
+            let total = totalTr.appendChild(document.createElement('th'))
+            total.innerHTML = 'Total dans la NHL'
+            total.setAttribute('colSpan', 3)
 
-                let league = tr.appendChild(document.createElement("td"))
-                league.innerHTML = ligue
+            let pj = totalTr.appendChild(document.createElement('th'))
+            pj.innerHTML = cPj.toString()
 
-                let pjStat = arraySeasons[i].stat.games
+            let b = totalTr.appendChild(document.createElement('th'))
+            b.innerHTML = cBut.toString()
 
-                if (ligue === 'NHL') {
-                    cPj += pjStat
+            let a = totalTr.appendChild(document.createElement('th'))
+            a.innerHTML = cA.toString()
+
+            let pts = totalTr.appendChild(document.createElement('th'))
+            pts.innerHTML = cPts
+
+            let cPpg = 0;
+            if (cPj >= 1)
+                cPpg = (cPts / cPj).toFixed(2)
+            let ppg = totalTr.appendChild(document.createElement('th'))
+            ppg.innerHTML = cPpg.toString()
+        } else{
+            let cPj = 0;
+            let cV = 0;
+            let cL = 0;
+            let cBl = 0;
+            let cGaa = 0;
+            let cPct = 0;
+            let nbSaison = 0;
+
+            for (let i = 0; i < arraySeasons.length; i++) {
+                let ok = false;
+                let ligue = '';
+                switch (arraySeasons[i].league.name) {
+                    case ('National Hockey League'):
+                        ok = true
+                        ligue = 'NHL'
+                        break;
+                    case ('QMJHL'):
+                        ok = true;
+                        ligue = 'LHJMQ'
+                        break;
+                    case ('WHL'):
+                        ok = true
+                        ligue = 'WHL'
+                        break
+                    case ('OHL'):
+                        ok = true
+                        ligue = 'OHL'
+                        break;
+
                 }
-                let pj = tr.appendChild(document.createElement("td"))
-                pj.innerHTML = pjStat
+                if (ok){
+                    let tr = tbodyStats.appendChild(document.createElement('tr'))
+                    let annee = tr.appendChild(document.createElement('td'))
+                    annee.innerHTML = arraySeasons[i].season.slice(0, 4) + '-' + arraySeasons[i].season.slice(4);
 
+                    let team = tr.appendChild(document.createElement("td"))
+                    team.innerHTML = arraySeasons[i].team.name
 
-                if (ligue === 'NHL') {
-                    cBut += arraySeasons[i].stat.goals
+                    let league = tr.appendChild(document.createElement("td"))
+                    league.innerHTML = ligue
+
+                    let pjStat = arraySeasons[i].stat.games
+                    let pj = tr.appendChild(document.createElement('td'))
+                    pj.innerHTML = pjStat
+
+                    let vStat = arraySeasons[i].stat.wins
+                    let v = tr.appendChild(document.createElement('td'))
+                    v.innerHTML = vStat
+
+                    let lStat = arraySeasons[i].stat.losses
+                    let l = tr.appendChild(document.createElement('td'))
+                    l.innerHTML = lStat
+
+                    let blStat = arraySeasons[i].stat.shutouts
+                    let bl = tr.appendChild(document.createElement('td'))
+                    bl.innerHTML = blStat
+
+                    let gaaStat = arraySeasons[i].stat.goalAgainstAverage
+                    let gaa = tr.appendChild(document.createElement('td'))
+                    gaa.innerHTML = gaaStat.toFixed(2)
+
+                    let pctStat = arraySeasons[i].stat.savePercentage
+                    let pct = tr.appendChild(document.createElement('td'))
+                    pct.innerHTML = pctStat.toFixed(3)
+
+                    if(ligue === 'NHL'){
+                        cPj += pjStat
+                        cV += vStat
+                        cL += lStat
+                        cBl += blStat
+                        cGaa += gaaStat
+                        cPct += pctStat
+                        nbSaison++;
+                    }
                 }
-                let goals = tr.appendChild(document.createElement("td"))
-                goals.innerHTML = arraySeasons[i].stat.goals.toString()
-
-                if (ligue === 'NHL') {
-                    cA += arraySeasons[i].stat.assists
-                }
-                let passes = tr.appendChild(document.createElement("td"))
-                passes.innerHTML = arraySeasons[i].stat.assists.toString()
-
-                let ptsStat = arraySeasons[i].stat.points
-                if (ligue === 'NHL') {
-                    cPts += ptsStat
-                }
-                let points = tr.appendChild(document.createElement("td"))
-                points.innerHTML = ptsStat.toString()
-
-                let ppgStat = 0
-                if (pjStat >= 1)
-                    ppgStat = ((ptsStat / pjStat).toFixed(2))
-                let ppg = tr.appendChild(document.createElement("td"))
-                ppg.innerHTML = ppgStat.toString()
             }
+            let totalTr = tbodyStats.appendChild(document.createElement("tr"))
+            let total = totalTr.appendChild(document.createElement('th'))
+            total.innerHTML = 'Total dans la NHL'
+            total.setAttribute('colSpan', 3)
+
+            let pj = totalTr.appendChild(document.createElement('th'))
+            pj.innerHTML = cPj.toString()
+
+            let v = totalTr.appendChild(document.createElement('th'))
+            v.innerHTML = cV.toString()
+
+            let l = totalTr.appendChild(document.createElement('th'))
+            l.innerHTML = cL.toString()
+
+            let bl = totalTr.appendChild(document.createElement('th'))
+            bl.innerHTML = cBl.toString()
+
+            let gaa = totalTr.appendChild(document.createElement('th'))
+            gaa.innerHTML = (cGaa / nbSaison).toFixed(2)
+
+            let pct = totalTr.appendChild(document.createElement('th'))
+            pct.innerHTML = (cPct / nbSaison).toFixed(3)
         }
-        let totalTr = tbodyStats.appendChild(document.createElement("tr"))
-        let total = totalTr.appendChild(document.createElement('th'))
-        total.innerHTML = 'Total dans la NHL'
-        total.setAttribute('colSpan', 3)
-
-        let pj = totalTr.appendChild(document.createElement('th'))
-        pj.innerHTML = cPj.toString()
-
-        let b = totalTr.appendChild(document.createElement('th'))
-        b.innerHTML = cBut.toString()
-
-        let a = totalTr.appendChild(document.createElement('th'))
-        a.innerHTML = cA.toString()
-
-        let pts = totalTr.appendChild(document.createElement('th'))
-        pts.innerHTML = cPts
-
-        let cPpg = 0;
-        if (cPj >= 1)
-            cPpg = (cPts / cPj).toFixed(2)
-        let ppg = totalTr.appendChild(document.createElement('th'))
-        ppg.innerHTML = cPpg.toString()
 
 
         //Creation info Joueur
@@ -281,7 +401,6 @@ function genererPageJoueur(id) {
         let tbodyDeuxTr = info.appendChild(document.createElement('tr'))
         let age = tbodyDeuxTr.appendChild(document.createElement('td'))
         age.innerHTML = JSON.parse(name.response).people[0].currentAge + ' ans'
-    }else{
     }
 }
 
