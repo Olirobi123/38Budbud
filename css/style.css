@@ -112,6 +112,7 @@ nav li a {
 	overflow: auto;
 }
 
+
 /*Scrollbar*/
 #live::-webkit-scrollbar-track {
 	border: 1px solid #000;
@@ -148,7 +149,9 @@ nav li a {
 #live td {
 	width: 100%;
 }
-
+#live span table tr:first-child{
+	height: 72px;
+}
 #content {
 	width: 98vw;
 	height: 80vh;
