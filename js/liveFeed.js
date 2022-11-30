@@ -8,15 +8,15 @@ function liveFeed() {
             genererPageJoueur(getActivePlayerId(rechercheJoueur.value));
         }
     });
-    document.getElementById('hamberger-icon').addEventListener('click', function (e){
+    document.getElementById('hamberger-icon').addEventListener('click', function (e) {
         let tab = document.querySelectorAll('#mobile-menu li')
-            for (let i = 0; i < tab.length; i++) {
-                tab[i].className = 'afficher'
-                document.getElementById('mobile-menu-ul').className = 'container-aff-oui'
-            }
+        for (let i = 0; i < tab.length; i++) {
+            tab[i].className = 'afficher'
+            document.getElementById('mobile-menu-ul').className = 'container-aff-oui'
+        }
     });
 
-    document.getElementById('xImage').addEventListener('click', function (){
+    document.getElementById('xImage').addEventListener('click', function () {
         let tab = document.querySelectorAll('#mobile-menu li')
         for (let i = 0; i < tab.length; i++) {
             tab[i].className = 'cacher'
@@ -31,9 +31,9 @@ function getActivePlayerId(name) {
     player.send();
 
     let returnValue = false
-    try{
+    try {
         returnValue = parseInt(JSON.parse(player.response).suggestions[0].slice(0, 7));
-    }catch(error){
+    } catch (error) {
         alert('Le joueur suivant n\'exite pas.\nVérifiez si le joueur est apte a être selectionné par un club de la 38Budbud. Si oui, vérifiez l\'ortographe')
     }
     return returnValue
@@ -60,7 +60,7 @@ function creerTable(position) {
     deuxiemeTr.appendChild(ligue)
     deuxiemeTr.appendChild(pj)
     //Patineur
-    if (position !== 'G'){
+    if (position !== 'G') {
         let b = document.createElement('th')
         b.innerHTML = 'B'
         let a = document.createElement('th')
@@ -73,12 +73,12 @@ function creerTable(position) {
         deuxiemeTr.appendChild(a)
         deuxiemeTr.appendChild(pts)
         deuxiemeTr.appendChild(ppg)
-    }else {
+    } else {
         //Gardiens
         let victoires = document.createElement('th')
         victoires.innerHTML = 'V'
         let l = document.createElement('th')
-        l.innerHTML = 'L'
+        l.innerHTML = 'D'
         let bl = document.createElement('th')
         bl.innerHTML = 'BL'
         let gaa = document.createElement('th')
@@ -94,8 +94,6 @@ function creerTable(position) {
     }
 
 
-
-
     let tableBody = statsJoueur.appendChild(document.createElement('tbody'))
     tableBody.id = 'tbodyStats'
 }
@@ -106,7 +104,7 @@ function genererPageJoueur(id) {
         rechercheJoueur.value = '';
         if (document.querySelector('#tradesSection h1')) {
             document.querySelector('#tradesSection h1').remove();
-        }else if (document.querySelector('#draftSection h1')){
+        } else if (document.querySelector('#draftSection h1')) {
             document.querySelector('#draftSection h1').remove();
         }
 
@@ -122,7 +120,7 @@ function genererPageJoueur(id) {
         let codePosition = JSON.parse(name.response).people[0].primaryPosition.abbreviation
         content.innerHTML = ''
         creerTable(codePosition);
-        if (codePosition !== 'G'){
+        if (codePosition !== 'G') {
             let cPj = 0
             let cBut = 0
             let cA = 0;
@@ -272,13 +270,16 @@ function genererPageJoueur(id) {
                 cPpg = (cPts / cPj).toFixed(2)
             let ppg = totalTr.appendChild(document.createElement('th'))
             ppg.innerHTML = cPpg.toString()
-        } else{
+        } else {
             let cPj = 0;
             let cV = 0;
             let cL = 0;
             let cBl = 0;
-            let cGaa = 0;
+            let cGa = 0;
+            let cGstarted = 0;
             let cPct = 0;
+            let cShotAgainst = 0;
+            let cSaves = 0;
             let nbSaison = 0;
 
             for (let i = 0; i < arraySeasons.length; i++) {
@@ -303,7 +304,7 @@ function genererPageJoueur(id) {
                         break;
 
                 }
-                if (ok){
+                if (ok) {
                     let tr = tbodyStats.appendChild(document.createElement('tr'))
                     let annee = tr.appendChild(document.createElement('td'))
                     annee.innerHTML = arraySeasons[i].season.slice(0, 4) + '-' + arraySeasons[i].season.slice(4);
@@ -320,30 +321,46 @@ function genererPageJoueur(id) {
 
                     let vStat = arraySeasons[i].stat.wins
                     let v = tr.appendChild(document.createElement('td'))
-                    v.innerHTML = vStat
-
+                    if (vStat !== undefined)
+                        v.innerHTML = vStat
+                    else
+                        v.innerHTML = '-'
                     let lStat = arraySeasons[i].stat.losses
                     let l = tr.appendChild(document.createElement('td'))
-                    l.innerHTML = lStat
+                    if (lStat !== undefined)
+                        l.innerHTML = lStat
+                    else
+                        l.innerHTML = '-'
 
                     let blStat = arraySeasons[i].stat.shutouts
                     let bl = tr.appendChild(document.createElement('td'))
-                    bl.innerHTML = blStat
+                    if (blStat !== undefined)
+                        bl.innerHTML = blStat
+                    else
+                        bl.innerHTML = '-'
 
                     let gaaStat = arraySeasons[i].stat.goalAgainstAverage
                     let gaa = tr.appendChild(document.createElement('td'))
-                    gaa.innerHTML = gaaStat.toFixed(2)
+                    if (gaaStat !== undefined)
+                        gaa.innerHTML = gaaStat.toFixed(2)
+                    else
+                        gaa.innerHTML = '-'
 
                     let pctStat = arraySeasons[i].stat.savePercentage
                     let pct = tr.appendChild(document.createElement('td'))
-                    pct.innerHTML = pctStat.toFixed(3)
-
-                    if(ligue === 'NHL'){
+                    if (pctStat !== undefined)
+                        pct.innerHTML = pctStat.toFixed(3)
+                    else
+                        pct.innerHTML = '-'
+                    if (ligue === 'NHL') {
                         cPj += pjStat
                         cV += vStat
                         cL += lStat
                         cBl += blStat
-                        cGaa += gaaStat
+                        cGstarted += arraySeasons[i].stat.gamesStarted
+                        cGa += arraySeasons[i].stat.goalsAgainst
+                        cShotAgainst += arraySeasons[i].stat.shotsAgainst
+                        cSaves += arraySeasons[i].stat.saves
                         cPct += pctStat
                         nbSaison++;
                     }
@@ -367,10 +384,10 @@ function genererPageJoueur(id) {
             bl.innerHTML = cBl.toString()
 
             let gaa = totalTr.appendChild(document.createElement('th'))
-            gaa.innerHTML = (cGaa / nbSaison).toFixed(2)
+            gaa.innerHTML = (cGa / cGstarted).toFixed(2)
 
             let pct = totalTr.appendChild(document.createElement('th'))
-            pct.innerHTML = (cPct / nbSaison).toFixed(3)
+            pct.innerHTML = (cSaves / cShotAgainst).toFixed(3)
         }
 
 
