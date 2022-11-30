@@ -189,7 +189,7 @@ nav li a {
 	}
 
 	header nav {
-		padding: 0 50px;
+		padding: 0 20px;
 	}
 	header .logo {
 		font-size: 27px;
@@ -204,10 +204,10 @@ nav li a {
 		grid-row-end: 1;
 		grid-column-start: 1;
 	}
-	ul li:not(#li-recherche) {
+	header nav ul li:not(#li-recherche) {
 		display: none;
 	}
-	nav ul li{
+	header nav ul li{
 		position: absolute;
 		top: 225px;
 		left: 25%;
@@ -219,11 +219,8 @@ nav li a {
 		display: inline;
 		width: 25px;
 		position: absolute;
-		right: 15px;
+		right: 19px;
 		top: 28px;
-	}
-	#hamberger-icon #mobile-menu{
-		display : none;
 	}
 	.bar1, .bar2, .bar3{
 		width: 100%;
@@ -232,5 +229,49 @@ nav li a {
 		margin-bottom: 4px;
 		margin-right: 5px;
 		border-radius: 5px;
+	}
+	#mobile-menu{
+		padding: 0;
+	}
+	.container-aff-oui{
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		background-color: black;
+		opacity: 90%;
+	}
+	.container-aff-oui img{
+		width: 30px;
+		position: fixed;
+		top: 15px;
+		right: 15px;
+		opacity: 100%;
+	}
+	.container-aff-non{
+		height: 0;
+	}
+	#mobile-menu a{
+		text-decoration: none;
+		color: white;
+	}
+	#mobile-menu li{
+		list-style: none;
+		text-align: center;
+	}
+	#mobile-menu li:not(#xImageLi){
+		height: 20%;
+	}
+	.afficher{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	.cacher{
+		display: none;
+	}
+	#mobile-menu li a{
+		padding: 5px;
+		border: 2px solid white;
 	}
 }

@@ -9,7 +9,19 @@ function liveFeed() {
         }
     });
     document.getElementById('hamberger-icon').addEventListener('click', function (e){
-        document.getElementById('mobile-menu').style.display = 'block'
+        let tab = document.querySelectorAll('#mobile-menu li')
+            for (let i = 0; i < tab.length; i++) {
+                tab[i].className = 'afficher'
+                document.getElementById('mobile-menu-ul').className = 'container-aff-oui'
+            }
+    });
+
+    document.getElementById('xImage').addEventListener('click', function (){
+        let tab = document.querySelectorAll('#mobile-menu li')
+        for (let i = 0; i < tab.length; i++) {
+            tab[i].className = 'cacher'
+            document.getElementById('mobile-menu-ul').className = 'container-aff-non'
+        }
     });
 }
 

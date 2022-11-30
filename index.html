@@ -3,9 +3,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv='cache-control' content='no-cache'> 
-        <meta http-equiv='expires' content='0'> 
-        <meta http-equiv='pragma' content='no-cache'>
         <title>38BudBud</title>
         <script src="js/JSON.js"></script>
         <script src="js/liveFeed.js" defer></script>
@@ -27,17 +24,22 @@
                     <li id="li-recherche"><input id="rechercheJoueur" placeholder="Entrez le nom d'un joueur"></li>
                 </ul>
             </nav>
+
             <div id="hamberger-icon">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
-                <ul id="mobile-menu">
-                    <li> <a href="">Équipes</a></li>
-                    <li><a href="pages/echanges.html">Échanges</a></li>
-                    <li><a href="pages/draft.html">Repêchage</a></li>
-                    <li><a href="https://www.marqueur.com/hockey/mbr/tools/pool/index.php?nyx=190707" target="_blank">Marqueur</a></li>
+            </div>
+            <div id="mobile-menu">
+                <ul id="mobile-menu-ul" class="container-aff-non">
+                    <li class="cacher" id="xImageLi"><img src="images/x.png" id="xImage"></li>
+                    <li class="cacher"><a href="">Équipes</a></li>
+                    <li class="cacher"><a href="pages/echanges.html">Échanges</a></li>
+                    <li class="cacher"><a href="pages/draft.html">Repêchage</a></li>
+                    <li class="cacher"><a href="https://www.marqueur.com/hockey/mbr/tools/pool/index.php?nyx=190707" target="_blank">Marqueur</a></li>
                 </ul>
             </div>
+
         </header>
         <section id="live">
 
