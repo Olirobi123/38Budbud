@@ -72,6 +72,13 @@ let tradesJson = {
                 "team1Receives": "Jack Hughes<br>Jesper Bratt<br>Sergei Bobrovsky<br>2nd round pick 2023",
                 "team2": CO,
                 "team2Receives": "Auston Matthews<br>Andrei Vasilevskiy<br>Devon Toews"
+            },
+            {
+                "date": "30 novembre",
+                "team1": OLI,
+                "team1Receives": "Lucas Raymond<br>Taylor Hall<br>2nd round pick 2024",
+                "team2": SAM,
+                "team2Receives": "Zach Hyman<br>Rasmus Andersson"
             }
         ]
     }
