@@ -79,20 +79,6 @@ let tradesJson = {
                 "team1Receives": "Lucas Raymond<br>Taylor Hall<br>2nd round pick 2024",
                 "team2": SAM,
                 "team2Receives": "Zach Hyman<br>Rasmus Andersson"
-            },
-            {
-                "date": "1er décembre",
-                "team1": NADO,
-                "team1Receives": "Ryan Nugent-Hopkins<br>Blake Wheeler<br>Gustav Forsling",
-                "team2": TALBOT,
-                "team2Receives": "Sebastian Aho<br>Samuel Girard<br>Phil Kessel<br>4th round pick 2023"
-            },
-            {
-                "date": "1er décembre",
-                "team1": ANTHO,
-                "team1Receives": "Vitek Vanecek<br>Nico Hischier<br>Patrick Kane",
-                "team2": CO,
-                "team2Receives": "Igor Shesterkin<br>Johnny Gaudreau<br>William Nylander"
             }
         ]
     }
