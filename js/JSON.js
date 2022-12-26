@@ -93,6 +93,13 @@ let tradesJson = {
                 "team1Receives": "Vitek Vanecek<br>Nico Hischier<br>Patrick Kane",
                 "team2": CO,
                 "team2Receives": "Igor Shesterkin<br>Johnny Gaudreau<br>William Nylander"
+            },
+            {
+                "date": "19 décembre",
+                "team1": NADO,
+                "team1Receives": "Elias Petterson<br>Claude Giroux",
+                "team2": TALBOT,
+                "team2Receives": "Dylan Larkin<br>Noah Dobson<br>Victor Hedman"
             }
         ]
     }
