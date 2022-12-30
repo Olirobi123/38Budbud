@@ -36,3 +36,26 @@
 #dernierEchange:hover {
     transform: translate(0px, -5px);
 }
+.latable{
+    width: 100%;
+    height: 100%;
+    border: 5px solid #181b23;
+    border-radius: 12px 12px;
+    background-color: #181b23;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    transition: all 0.4s ease 0s;
+    border-collapse: collapse;
+}
+.latable:hover {
+    transform: translate(0px, -5px);
+}
+.latable td, .latable th{
+    border: 2px solid black;
+}
+#content > div > table > tbody > tr:nth-child(1) > td{
+    background-color: black;
+    font-weight: bold;
+}
