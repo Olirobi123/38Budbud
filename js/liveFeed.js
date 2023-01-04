@@ -100,13 +100,17 @@ function creerTable(position) {
 }
 
 function genererPageJoueur(id) {
-    content.style.height = 'unset'
+    if (!document.querySelector('#equipeSection')){
+        content.style.height = 'unset'
+    }
     if (!isNaN(parseInt(id))) {
         rechercheJoueur.value = '';
         if (document.querySelector('#tradesSection h1')) {
             document.querySelector('#tradesSection h1').remove();
         } else if (document.querySelector('#draftSection h1')) {
             document.querySelector('#draftSection h1').remove();
+        } else if (document.querySelector('#equipeSectionSection h1')) {
+            document.querySelector('#equipeSection h1').remove();
         }
 
         //REQUEST

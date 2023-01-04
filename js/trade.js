@@ -14,7 +14,6 @@ function genererTrades(jsonData) {
         div.innerHTML += "<h4>" + tableau[i].team1 + "</h4><span>" + tableau[i].team2Receives +
             "</span><h4>" + tableau[i].team2 + "</h4><span>" + tableau[i].team1Receives + "</span>"
     }
-    content.innerHTML += tableau.length + " échanges en 2022-2023"
 }
 
 trade();

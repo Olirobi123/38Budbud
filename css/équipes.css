@@ -56,10 +56,7 @@
         height: 300px;
     }
     #content{
-        height: unset;
         margin-bottom: 20px;
-    }
-    .team div{
-        margin-top: 20%;
+        grid-template-rows: 1fr 1fr;
     }
 }
