@@ -1,5 +1,6 @@
 "use strict"
 const proxy = 'https://api.allorigins.win/raw?url='
+const currentSeason = '20222023'
 
 function liveFeed() {
     genererLiveGames();
@@ -398,26 +399,35 @@ function genererPageJoueur(id) {
         tr.id = 'premierTr'
         let thHeadPicture = tr.appendChild(document.createElement('th'))
         let picture = thHeadPicture.appendChild(document.createElement('img'))
+        let linkTeam = JSON.parse(name.response).people[0].currentTeam.link
 
-        picture.src = proxy + 'http://nhl.bamcontent.com/images/headshots/current/168x168/' + id + '.jpg'
-        picture.alt = "Photo indisponible pour les joueurs pas dans la AHL et NHL"
-        thHeadPicture.setAttribute('rowSpan', '3')
-        thHeadPicture.setAttribute('width', '168px')
-        picture.id = 'imgJoueur'
-        let thHead = tr.appendChild(document.createElement('th'))
-        thHead.innerHTML = JSON.parse(name.response).people[0].fullName
-        thHead.id = 'titreInfo'
-        thHead.setAttribute('colSpan', '2')
-        let tbodyPremierTr = info.appendChild(document.createElement('tr'))
-        let positions = tbodyPremierTr.appendChild(document.createElement('td'))
-        let rightVsLeft = 'Left'
-        if (JSON.parse(name.response).people[0].shootsCatches === 'R')
-            rightVsLeft = 'Right'
-        positions.innerHTML = JSON.parse(name.response).people[0].primaryPosition.name + ' | ' + 'Shoots: ' + rightVsLeft
+        let abbCall = new XMLHttpRequest();
+        abbCall.open('GET', 'https://statsapi.web.nhl.com' + linkTeam, true)
+        abbCall.send();
 
-        let tbodyDeuxTr = info.appendChild(document.createElement('tr'))
-        let age = tbodyDeuxTr.appendChild(document.createElement('td'))
-        age.innerHTML = JSON.parse(name.response).people[0].currentAge + ' ans'
+        abbCall.onload = () => {
+            let abbTeam = JSON.parse(abbCall.response).teams[0].abbreviation;
+            picture.src = 'https://assets.nhle.com/mugs/nhl/' + currentSeason + '/' + abbTeam + '/' + id + '.png';
+            picture.alt = "Photo indisponible pour les joueurs pas dans la AHL et NHL"
+            thHeadPicture.setAttribute('rowSpan', '3')
+            thHeadPicture.setAttribute('width', '168px')
+            picture.id = 'imgJoueur'
+            let thHead = tr.appendChild(document.createElement('th'))
+            thHead.innerHTML = JSON.parse(name.response).people[0].fullName
+            thHead.id = 'titreInfo'
+            thHead.setAttribute('colSpan', '2')
+            let tbodyPremierTr = info.appendChild(document.createElement('tr'))
+            let positions = tbodyPremierTr.appendChild(document.createElement('td'))
+            let rightVsLeft = 'Left'
+            if (JSON.parse(name.response).people[0].shootsCatches === 'R')
+                rightVsLeft = 'Right'
+            positions.innerHTML = JSON.parse(name.response).people[0].primaryPosition.name + ' | ' + 'Shoots: ' + rightVsLeft
+
+            let tbodyDeuxTr = info.appendChild(document.createElement('tr'))
+            let age = tbodyDeuxTr.appendChild(document.createElement('td'))
+            age.innerHTML = JSON.parse(name.response).people[0].currentAge + ' ans'
+        }
+
     }
 }
 
@@ -461,8 +471,14 @@ function genererLiveGames() {
 
 
                 let game = JSON.parse(liveFeed.response)
-                away.innerHTML = game.gameData.teams.away.abbreviation
-                home.innerHTML = game.gameData.teams.home.abbreviation
+                let awayImg = away.appendChild(document.createElement('img'))
+                let awayAbb = game.gameData.teams.away.abbreviation
+                let homeImg = home.appendChild(document.createElement('img'))
+                let homeAbb = game.gameData.teams.home.abbreviation
+                awayImg.src = 'https://assets.nhle.com/logos/nhl/svg/' + awayAbb + '_dark.svg'
+                homeImg.src = 'https://assets.nhle.com/logos/nhl/svg/' + homeAbb + '_dark.svg'
+                awayImg.className = 'logoTeam';
+                homeImg.className = 'logoTeam';
                 awayScore.innerHTML = game.liveData.linescore.teams.away.goals
                 homeScore.innerHTML = game.liveData.linescore.teams.home.goals
 
