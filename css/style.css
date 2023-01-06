@@ -217,11 +217,12 @@ nav li a {
 	}
 	header nav ul li{
 		position: absolute;
-		top: 225px;
+		top: 250px;
 		left: 25%;
 	}
 	#live{
 		margin-bottom: 70px;
+		height: 171px;
 	}
 	#hamberger-icon{
 		display: inline;

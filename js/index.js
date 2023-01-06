@@ -1,5 +1,6 @@
 "use strict"
 function index() {
+    afficherTop10();
     afficherDernierEchange(tradesJson)
 }
 function afficherDernierEchange(jsonData){
@@ -10,5 +11,9 @@ function afficherDernierEchange(jsonData){
     recoit1.innerHTML = echange.team2Receives
     equipe2.innerHTML = echange.team2
     recoit2.innerHTML = echange.team1Receives
+}
+
+function afficherTop10() {
+
 }
 index();
