@@ -100,7 +100,15 @@ let tradesJson = {
                 "team1Receives": "Elias Petterson<br>Claude Giroux",
                 "team2": TALBOT,
                 "team2Receives": "Dylan Larkin<br>Noah Dobson<br>Victor Hedman"
+            },
+            {
+                "date": "13 janvier",
+                "team1": CO,
+                "team1Receives": "Leon Draisaitl",
+                "team2": ANDREW,
+                "team2Receives": "Josh Morrissey<br>Mark Stone<br>Andrei Vasilevskiy<br>3nd round pick 2023"
             }
+
         ]
     }
 }
