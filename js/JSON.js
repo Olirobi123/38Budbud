@@ -121,6 +121,13 @@ let tradesJson = {
                 "team1Receives": "Connor Hellebuyk<br>Gustav Forsling<br>Jack Guentzel<br>Mark Giordano<br>1st round pick 2024<br>5th round pick 2023",
                 "team2": NADO,
                 "team2Receives": "Jack Hughes<br>Pierre-Luc Dubois<br>Jack Campbell<br>Seth Jones"
+            },
+            {
+                "date": "1er février",
+                "team1": ANTHO,
+                "team1Receives": "Jack Eichel<br>Alex Newhook<br>John Gibson<br>2nd round pick 2024",
+                "team2": CO,
+                "team2Receives": "Aleksander Barkov<br>Brandon Montour"
             }
         ]
     }

@@ -15,3 +15,11 @@
 .nomChoix{
     cursor: pointer;
 }
+
+.ballotage{
+    text-align: center;
+    margin: auto;
+}
+.relache{
+    text-decoration: line-through;
+}
