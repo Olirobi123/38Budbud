@@ -1,12 +1,4 @@
 "use strict";
-const CO = "Canadiens Français de la Rivière aux Graines"
-const ANTHO = "Consanguins de Laterrière"
-const OLI = "Chiennes de Granby"
-const SAM = "Dream Team de Saint-Pie-X"
-const NADO = "Vidanges de Rimouski"
-const ANDREW = "Les Ptit-Pains Fourrés de Limoilou"
-const TALBOT = "Enculés de Westmount"
-
 let equipesJSON = {
     "equipes": {
             "Canadiens Français de la Rivière aux Graines":{

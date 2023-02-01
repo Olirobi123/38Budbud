@@ -1,97 +1,1286 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>38BudBud</title>
-        <script src="../js/draft2022-2023.js"></script>
-        <script src="../js/liveFeed.js" defer></script>
-        <script src="../js/draft.js" defer></script>
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/draft.css">
-    </head>
-    <body>
-        <header>
-            <nav>
-                <div class="logo">
-                    <a href="../index.html">38budbud</a>
-                </div>
-                <ul>
-                    <li> <a href="equipe.html">Équipes</a></li>
-                    <li><a href="echanges.html">Échanges</a></li>
-                    <li><a href="draft.html">Repêchage</a></li>
-                    <li><a href="https://www.marqueur.com/hockey/mbr/tools/pool/index.php?nyx=190707" target="_blank">Marqueur</a></li>
-                    <li id="li-recherche"><input id="rechercheJoueur" placeholder="Entrez le nom d'un joueur"></li>
-                </ul>
-            </nav>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title>38BudBud</title>
+    <script src="../js/liveFeed.js" defer></script>
+    <script src="../js/draft.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/draft.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="../index.html">38budbud</a>
+        </div>
+        <ul>
+          <li><a href="equipe.html">Équipes</a></li>
+          <li><a href="echanges.html">Échanges</a></li>
+          <li><a href="draft.html">Repêchage</a></li>
+          <li>
+            <a
+              href="https://www.marqueur.com/hockey/mbr/tools/pool/index.php?nyx=190707"
+              target="_blank"
+              >Marqueur</a
+            >
+          </li>
+          <li id="li-recherche">
+            <input
+              id="rechercheJoueur"
+              placeholder="Entrez le nom d'un joueur"
+            />
+          </li>
+        </ul>
+      </nav>
 
-            <div id="hamberger-icon">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div>
-            <div id="mobile-menu">
-                <ul id="mobile-menu-ul" class="container-aff-non">
-                    <li class="cacher" id="xImageLi"><img src="../images/x.png" id="xImage"></li>
-                    <li class="cacher"><a href="equipe.html">Équipes</a></li>
-                    <li class="cacher"><a href="echanges.html">Échanges</a></li>
-                    <li class="cacher"><a href="draft.html">Repêchage</a></li>
-                    <li class="cacher"><a href="https://www.marqueur.com/hockey/mbr/tools/pool/index.php?nyx=190707" target="_blank">Marqueur</a></li>
-                </ul>
-            </div>
-        </header>
-        <section id="live">
-
-        </section>
-        <section id="draftSection">
-            <h1>Ballotage décembre 2022</h1>
-            <table class="tableDraft ballotage">
-                <tr>
-                    <th>Équipe</th>
-                    <th>Joueur relaché</th>
-                    <th>Joueur séléctionné</th>
-                </tr>
-                <tr>
-                    <td>Les Enculés de Westmount</td>
-                    <td class="relache">Jacob Slavin</td>
-                    <td>Martin Necas</td>
-                </tr>
-                <tr>
-                    <td>Les Chiennes de Granby</td>
-                    <td class="relache">Simon Edvindsson</td>
-                    <td>Kirby Dach</td>
-                </tr>
-                <tr>
-                    <td>Les Consanguins de Laterrière</td>
-                    <td class="relache">Andrew Mangiapane</td>
-                    <td>Ville Husso</td>
-                </tr>
-                <tr>
-                    <td>Les Ptits-Pains Fourrées de Limoilou</td>
-                    <td class="relache">Casey Mittelstadt</td>
-                    <td>Brad Marchand</td>
-                </tr>
-                <tr>
-                    <td>Les Vidanges de Rimouski</td>
-                    <td class="relache">Anton Forsberg</td>
-                    <td>Andre Burakovsky</td>
-                </tr>
-                <tr>
-                    <td>Les Canadiens Français de la Rivière-Aux-Graines</td>
-                    <td class="relache">Cam York</td>
-                    <td>Vitek Vanecek</td>
-                </tr>
-                <tr>
-                    <td>La Dream-Team de Saint-Pie-X</td>
-                    <td class="relache">Alexandre Carrier</td>
-                    <td>Andrei Kuzmenko</td>
-                </tr>
-            </table>
-            <h1>Draft 2022-2023</h1>
-            <div id="content">
-            
-            </div>
-        </section>
-
-    </body>
+      <div id="hamberger-icon">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <div id="mobile-menu">
+        <ul id="mobile-menu-ul" class="container-aff-non">
+          <li class="cacher" id="xImageLi">
+            <img src="../images/x.png" id="xImage" />
+          </li>
+          <li class="cacher"><a href="equipe.html">Équipes</a></li>
+          <li class="cacher"><a href="echanges.html">Échanges</a></li>
+          <li class="cacher"><a href="draft.html">Repêchage</a></li>
+          <li class="cacher">
+            <a
+              href="https://www.marqueur.com/hockey/mbr/tools/pool/index.php?nyx=190707"
+              target="_blank"
+              >Marqueur</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section id="live"></section>
+    <section id="draftSection">
+      <h1>Ballotage décembre 2022</h1>
+      <table class="tableDraft ballotage">
+        <tr>
+          <th>Équipe</th>
+          <th>Joueur relaché</th>
+          <th>Joueur séléctionné</th>
+        </tr>
+        <tr>
+          <td>Les Enculés de Westmount</td>
+          <td class="relache">Jacob Slavin</td>
+          <td>Martin Necas</td>
+        </tr>
+        <tr>
+          <td>Les Chiennes de Granby</td>
+          <td class="relache">Simon Edvindsson</td>
+          <td>Kirby Dach</td>
+        </tr>
+        <tr>
+          <td>Les Consanguins de Laterrière</td>
+          <td class="relache">Andrew Mangiapane</td>
+          <td>Ville Husso</td>
+        </tr>
+        <tr>
+          <td>Les Ptits-Pains Fourrées de Limoilou</td>
+          <td class="relache">Casey Mittelstadt</td>
+          <td>Brad Marchand</td>
+        </tr>
+        <tr>
+          <td>Les Vidanges de Rimouski</td>
+          <td class="relache">Anton Forsberg</td>
+          <td>Andre Burakovsky</td>
+        </tr>
+        <tr>
+          <td>Les Canadiens Français de la Rivière-Aux-Graines</td>
+          <td class="relache">Cam York</td>
+          <td>Vitek Vanecek</td>
+        </tr>
+        <tr>
+          <td>La Dream-Team de Saint-Pie-X</td>
+          <td class="relache">Alexandre Carrier</td>
+          <td>Andrei Kuzmenko</td>
+        </tr>
+      </table>
+      <h1>Draft 2022-2023</h1>
+      <div id="content">
+        <table id="tableRounde1" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 1</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">1</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix1" class="nomChoix">Connor McDavid</td>
+          </tr>
+          <tr>
+            <td class="choix">2</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix2" class="nomChoix">Leon Draisaitl</td>
+          </tr>
+          <tr>
+            <td class="choix">3</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix3" class="nomChoix">Auston Matthews</td>
+          </tr>
+          <tr>
+            <td class="choix">4</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix4" class="nomChoix">Cale Makar</td>
+          </tr>
+          <tr>
+            <td class="choix">5</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix5" class="nomChoix">Nathan Mackinnon</td>
+          </tr>
+          <tr>
+            <td class="choix">6</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix6" class="nomChoix">Krill Kaprizov</td>
+          </tr>
+          <tr>
+            <td class="choix">7</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix7" class="nomChoix">Igor Shesterkin</td>
+          </tr>
+        </table>
+        <table id="tableRounde2" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 2</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">8</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix8" class="nomChoix">Mitchell Marner</td>
+          </tr>
+          <tr>
+            <td class="choix">9</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix9" class="nomChoix">Jonathan Huberdeau</td>
+          </tr>
+          <tr>
+            <td class="choix">10</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix10" class="nomChoix">Roman Josi</td>
+          </tr>
+          <tr>
+            <td class="choix">11</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix11" class="nomChoix">Nikita Kucherov</td>
+          </tr>
+          <tr>
+            <td class="choix">12</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix12" class="nomChoix">Andrei Vasilevskiy</td>
+          </tr>
+          <tr>
+            <td class="choix">13</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix13" class="nomChoix">Artemi Panarin</td>
+          </tr>
+          <tr>
+            <td class="choix">14</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix14" class="nomChoix">Jakob Markstrom</td>
+          </tr>
+        </table>
+        <table id="tableRounde3" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 3</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">15</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix15" class="nomChoix">Victor Hedman</td>
+          </tr>
+          <tr>
+            <td class="choix">16</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix16" class="nomChoix">Adam Fox</td>
+          </tr>
+          <tr>
+            <td class="choix">17</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix17" class="nomChoix">Aleksander Barkov</td>
+          </tr>
+          <tr>
+            <td class="choix">18</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix18" class="nomChoix">Mikko Rantanen</td>
+          </tr>
+          <tr>
+            <td class="choix">19</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix19" class="nomChoix">Sebastian Aho</td>
+          </tr>
+          <tr>
+            <td class="choix">20</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix20" class="nomChoix">Frederik Andersen</td>
+          </tr>
+          <tr>
+            <td class="choix">21</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix21" class="nomChoix">Jack Eichel</td>
+          </tr>
+        </table>
+        <table id="tableRounde4" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 4</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">22</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix22" class="nomChoix">Jack Hughes</td>
+          </tr>
+          <tr>
+            <td class="choix">23</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix23" class="nomChoix">Andrei Svechnikov</td>
+          </tr>
+          <tr>
+            <td class="choix">24</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix24" class="nomChoix">Matthew Tkachuk</td>
+          </tr>
+          <tr>
+            <td class="choix">25</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix25" class="nomChoix">Quinn Hughes</td>
+          </tr>
+          <tr>
+            <td class="choix">26</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix26" class="nomChoix">Johnny Gaudreau</td>
+          </tr>
+          <tr>
+            <td class="choix">27</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix27" class="nomChoix">Filip Forsberg</td>
+          </tr>
+          <tr>
+            <td class="choix">28</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix28" class="nomChoix">Jake Guentzel</td>
+          </tr>
+        </table>
+        <table id="tableRounde5" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 5</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">29</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix29" class="nomChoix">Sidney Crosby</td>
+          </tr>
+          <tr>
+            <td class="choix">30</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix30" class="nomChoix">Kyle Connor</td>
+          </tr>
+          <tr>
+            <td class="choix">31</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix31" class="nomChoix">Jack Campbell</td>
+          </tr>
+          <tr>
+            <td class="choix">32</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix32" class="nomChoix">Jason Robertson</td>
+          </tr>
+          <tr>
+            <td class="choix">33</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix33" class="nomChoix">Moritz Seider</td>
+          </tr>
+          <tr>
+            <td class="choix">34</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix34" class="nomChoix">Thatcher Demko</td>
+          </tr>
+          <tr>
+            <td class="choix">35</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix35" class="nomChoix">Trevor Zegras</td>
+          </tr>
+        </table>
+        <table id="tableRounde6" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 6</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">36</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix36" class="nomChoix">Miro Heiskanen</td>
+          </tr>
+          <tr>
+            <td class="choix">37</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix37" class="nomChoix">Aaron Ekblad</td>
+          </tr>
+          <tr>
+            <td class="choix">38</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix38" class="nomChoix">Juuse Saros</td>
+          </tr>
+          <tr>
+            <td class="choix">39</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix39" class="nomChoix">Jordan Kyrou</td>
+          </tr>
+          <tr>
+            <td class="choix">40</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix40" class="nomChoix">Alex Debrincat</td>
+          </tr>
+          <tr>
+            <td class="choix">41</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix41" class="nomChoix">Morgan Rielly</td>
+          </tr>
+          <tr>
+            <td class="choix">42</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix42" class="nomChoix">Anton Forsberg</td>
+          </tr>
+        </table>
+        <table id="tableRounde7" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 7</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">43</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix43" class="nomChoix">Mika Zibanejad</td>
+          </tr>
+          <tr>
+            <td class="choix">44</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix44" class="nomChoix">Matt Murray</td>
+          </tr>
+          <tr>
+            <td class="choix">45</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix45" class="nomChoix">William Nylander</td>
+          </tr>
+          <tr>
+            <td class="choix">46</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix46" class="nomChoix">Elias Petterson</td>
+          </tr>
+          <tr>
+            <td class="choix">47</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix47" class="nomChoix">Matt Duchene</td>
+          </tr>
+          <tr>
+            <td class="choix">48</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix48" class="nomChoix">Ilya Sorokin</td>
+          </tr>
+          <tr>
+            <td class="choix">49</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix49" class="nomChoix">Shea Theodore</td>
+          </tr>
+        </table>
+        <table id="tableRounde8" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 8</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">50</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix50" class="nomChoix">Robert Thomas</td>
+          </tr>
+          <tr>
+            <td class="choix">51</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix51" class="nomChoix">Kris Letang</td>
+          </tr>
+          <tr>
+            <td class="choix">52</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix52" class="nomChoix">Brady Tkachuk</td>
+          </tr>
+          <tr>
+            <td class="choix">53</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix53" class="nomChoix">Jordan Binnington</td>
+          </tr>
+          <tr>
+            <td class="choix">54</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix54" class="nomChoix">Devon Toews</td>
+          </tr>
+          <tr>
+            <td class="choix">55</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix55" class="nomChoix">J.T. Miller</td>
+          </tr>
+          <tr>
+            <td class="choix">56</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix56" class="nomChoix">Evander Kane</td>
+          </tr>
+        </table>
+        <table id="tableRounde9" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 9</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">57</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix57" class="nomChoix">Timo Meier</td>
+          </tr>
+          <tr>
+            <td class="choix">58</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix58" class="nomChoix">Brayden Point</td>
+          </tr>
+          <tr>
+            <td class="choix">59</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix59" class="nomChoix">Mark Scheifele</td>
+          </tr>
+          <tr>
+            <td class="choix">60</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix60" class="nomChoix">Matthew Barzal</td>
+          </tr>
+          <tr>
+            <td class="choix">61</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix61" class="nomChoix">Pavel Buchnevich</td>
+          </tr>
+          <tr>
+            <td class="choix">62</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix62" class="nomChoix">Josh Norris</td>
+          </tr>
+          <tr>
+            <td class="choix">63</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix63" class="nomChoix">David Pastrnak</td>
+          </tr>
+        </table>
+        <table id="tableRounde10" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 10</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">64</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix64" class="nomChoix">Thomas Chabot</td>
+          </tr>
+          <tr>
+            <td class="choix">65</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix65" class="nomChoix">Brent Burns</td>
+          </tr>
+          <tr>
+            <td class="choix">66</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix66" class="nomChoix">Gabriel Landeskog</td>
+          </tr>
+          <tr>
+            <td class="choix">67</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix67" class="nomChoix">Patrick Laine</td>
+          </tr>
+          <tr>
+            <td class="choix">68</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix68" class="nomChoix">John Carlson</td>
+          </tr>
+          <tr>
+            <td class="choix">69</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix69" class="nomChoix">Kevin Fiala</td>
+          </tr>
+          <tr>
+            <td class="choix">70</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix70" class="nomChoix">Elias Lindholm</td>
+          </tr>
+        </table>
+        <table id="tableRounde11" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 11</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">71</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix71" class="nomChoix">Nazem Kadri</td>
+          </tr>
+          <tr>
+            <td class="choix">72</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix72" class="nomChoix">Charlie Mcavoy</td>
+          </tr>
+          <tr>
+            <td class="choix">73</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix73" class="nomChoix">Sergei Bobrovsky</td>
+          </tr>
+          <tr>
+            <td class="choix">74</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix74" class="nomChoix">Zach Werenski</td>
+          </tr>
+          <tr>
+            <td class="choix">75</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix75" class="nomChoix">Rasmus Dahlin</td>
+          </tr>
+          <tr>
+            <td class="choix">76</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix76" class="nomChoix">Mackenzie Weegar</td>
+          </tr>
+          <tr>
+            <td class="choix">77</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix77" class="nomChoix">Jesper Bratt</td>
+          </tr>
+        </table>
+        <table id="tableRounde12" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 12</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">78</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix78" class="nomChoix">Tim Stützle</td>
+          </tr>
+          <tr>
+            <td class="choix">79</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix79" class="nomChoix">Evgeni Malkin</td>
+          </tr>
+          <tr>
+            <td class="choix">80</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix80" class="nomChoix">Tage Thompson</td>
+          </tr>
+          <tr>
+            <td class="choix">81</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix81" class="nomChoix">Matthew Boldy</td>
+          </tr>
+          <tr>
+            <td class="choix">82</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix82" class="nomChoix">Nick Suzuki</td>
+          </tr>
+          <tr>
+            <td class="choix">83</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix83" class="nomChoix">Troy Terry</td>
+          </tr>
+          <tr>
+            <td class="choix">84</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix84" class="nomChoix">Noah Dobson</td>
+          </tr>
+        </table>
+        <table id="tableRounde13" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 13</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">85</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix85" class="nomChoix">Connor Hellebuyck</td>
+          </tr>
+          <tr>
+            <td class="choix">86</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix86" class="nomChoix">Alexander Georgiev</td>
+          </tr>
+          <tr>
+            <td class="choix">87</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix87" class="nomChoix">Seth Jones</td>
+          </tr>
+          <tr>
+            <td class="choix">88</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix88" class="nomChoix">Evan Bouchard</td>
+          </tr>
+          <tr>
+            <td class="choix">89</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix89" class="nomChoix">Roope Hintz</td>
+          </tr>
+          <tr>
+            <td class="choix">90</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix90" class="nomChoix">Mason Mctavish</td>
+          </tr>
+          <tr>
+            <td class="choix">91</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix91" class="nomChoix">Jake Oettinger</td>
+          </tr>
+        </table>
+        <table id="tableRounde14" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 14</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">92</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix92" class="nomChoix">Patrick Kane</td>
+          </tr>
+          <tr>
+            <td class="choix">93</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix93" class="nomChoix">Sam Bennett</td>
+          </tr>
+          <tr>
+            <td class="choix">94</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix94" class="nomChoix">Matty Beniers</td>
+          </tr>
+          <tr>
+            <td class="choix">95</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix95" class="nomChoix">Evgeny Kuznetsov</td>
+          </tr>
+          <tr>
+            <td class="choix">96</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix96" class="nomChoix">Andrew Mangiapane</td>
+          </tr>
+          <tr>
+            <td class="choix">97</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix97" class="nomChoix">Mikhail Sergachev</td>
+          </tr>
+          <tr>
+            <td class="choix">98</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix98" class="nomChoix">Owen Power</td>
+          </tr>
+        </table>
+        <table id="tableRounde15" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 15</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">99</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix99" class="nomChoix">Sam Reinhart</td>
+          </tr>
+          <tr>
+            <td class="choix">100</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix100" class="nomChoix">Dougie Hamilton</td>
+          </tr>
+          <tr>
+            <td class="choix">101</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix101" class="nomChoix">Torey Krug</td>
+          </tr>
+          <tr>
+            <td class="choix">102</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix102" class="nomChoix">Tristan Jarry</td>
+          </tr>
+          <tr>
+            <td class="choix">103</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix103" class="nomChoix">Rasmus Andersson</td>
+          </tr>
+          <tr>
+            <td class="choix">104</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix104" class="nomChoix">Jaccob Slavin</td>
+          </tr>
+          <tr>
+            <td class="choix">105</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix105" class="nomChoix">John Gibson</td>
+          </tr>
+        </table>
+        <table id="tableRounde16" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 16</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">106</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix106" class="nomChoix">Jamie Drysdale</td>
+          </tr>
+          <tr>
+            <td class="choix">107</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix107" class="nomChoix">Gustav Forsling</td>
+          </tr>
+          <tr>
+            <td class="choix">108</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix108" class="nomChoix">Cam Talbot</td>
+          </tr>
+          <tr>
+            <td class="choix">109</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix109" class="nomChoix">Lucas Raymond</td>
+          </tr>
+          <tr>
+            <td class="choix">110</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix110" class="nomChoix">Darnell Nurse</td>
+          </tr>
+          <tr>
+            <td class="choix">111</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix111" class="nomChoix">Anthony DeAngelo</td>
+          </tr>
+          <tr>
+            <td class="choix">112</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix112" class="nomChoix">Dylan Larkin</td>
+          </tr>
+        </table>
+        <table id="tableRounde17" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 17</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">113</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix113" class="nomChoix">Drew Doughty</td>
+          </tr>
+          <tr>
+            <td class="choix">114</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix114" class="nomChoix">Anton Lundell</td>
+          </tr>
+          <tr>
+            <td class="choix">115</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix115" class="nomChoix">Cole Caufield</td>
+          </tr>
+          <tr>
+            <td class="choix">116</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix116" class="nomChoix">Jakob Chykrun</td>
+          </tr>
+          <tr>
+            <td class="choix">117</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix117" class="nomChoix">Teuvo Teravainen</td>
+          </tr>
+          <tr>
+            <td class="choix">118</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix118" class="nomChoix">Vladimir Tarasenko</td>
+          </tr>
+          <tr>
+            <td class="choix">119</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix119" class="nomChoix">Steven Stamkos</td>
+          </tr>
+        </table>
+        <table id="tableRounde18" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 18</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">120</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix120" class="nomChoix">Alex Ovechkin</td>
+          </tr>
+          <tr>
+            <td class="choix">121</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix121" class="nomChoix">Alex Pietrangelo</td>
+          </tr>
+          <tr>
+            <td class="choix">122</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix122" class="nomChoix">Michael Bunting</td>
+          </tr>
+          <tr>
+            <td class="choix">123</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix123" class="nomChoix">Taylor Hall</td>
+          </tr>
+          <tr>
+            <td class="choix">124</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix124" class="nomChoix">Noah Hanifin</td>
+          </tr>
+          <tr>
+            <td class="choix">125</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix125" class="nomChoix">Jared Spurgeon</td>
+          </tr>
+          <tr>
+            <td class="choix">126</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix126" class="nomChoix">Nikolaj Ehlers</td>
+          </tr>
+        </table>
+        <table id="tableRounde19" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 19</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">127</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix127" class="nomChoix">Mark Giordano</td>
+          </tr>
+          <tr>
+            <td class="choix">128</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix128" class="nomChoix">Jeff Skinner</td>
+          </tr>
+          <tr>
+            <td class="choix">129</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix129" class="nomChoix">Pierre-Luc Dubois</td>
+          </tr>
+          <tr>
+            <td class="choix">130</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix130" class="nomChoix">Drake Batherson</td>
+          </tr>
+          <tr>
+            <td class="choix">131</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix131" class="nomChoix">Zach Hyman</td>
+          </tr>
+          <tr>
+            <td class="choix">132</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix132" class="nomChoix">Ryan Nugent-Hopkins</td>
+          </tr>
+          <tr>
+            <td class="choix">133</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix133" class="nomChoix">Ivan Provorov</td>
+          </tr>
+        </table>
+        <table id="tableRounde20" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 20</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">134</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix134" class="nomChoix">Clayton Keller</td>
+          </tr>
+          <tr>
+            <td class="choix">135</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix135" class="nomChoix">Tyler Toffoli</td>
+          </tr>
+          <tr>
+            <td class="choix">136</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix136" class="nomChoix">Spencer Knight</td>
+          </tr>
+          <tr>
+            <td class="choix">137</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix137" class="nomChoix">Vincent Trocheck</td>
+          </tr>
+          <tr>
+            <td class="choix">138</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix138" class="nomChoix">Ryan Hartman</td>
+          </tr>
+          <tr>
+            <td class="choix">139</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix139" class="nomChoix">Casey Mittelstadt</td>
+          </tr>
+          <tr>
+            <td class="choix">140</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix140" class="nomChoix">Bowen Byram</td>
+          </tr>
+        </table>
+        <table id="tableRounde21" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 21</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">141</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix141" class="nomChoix">John Tavares</td>
+          </tr>
+          <tr>
+            <td class="choix">142</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix142" class="nomChoix">Bo Horvat</td>
+          </tr>
+          <tr>
+            <td class="choix">143</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix143" class="nomChoix">Nico Hischier</td>
+          </tr>
+          <tr>
+            <td class="choix">144</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix144" class="nomChoix">Damon Severson</td>
+          </tr>
+          <tr>
+            <td class="choix">145</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix145" class="nomChoix">Jeff Petry</td>
+          </tr>
+          <tr>
+            <td class="choix">146</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix146" class="nomChoix">Jacob Trouba</td>
+          </tr>
+          <tr>
+            <td class="choix">147</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix147" class="nomChoix">Seth Jarvis</td>
+          </tr>
+        </table>
+        <table id="tableRounde22" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 22</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">148</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix148" class="nomChoix">Alex Newhook</td>
+          </tr>
+          <tr>
+            <td class="choix">149</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix149" class="nomChoix">Claude Giroux</td>
+          </tr>
+          <tr>
+            <td class="choix">150</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix150" class="nomChoix">Adrian Kempe</td>
+          </tr>
+          <tr>
+            <td class="choix">151</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix151" class="nomChoix">Filip Hronek</td>
+          </tr>
+          <tr>
+            <td class="choix">152</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix152" class="nomChoix">Jaden Schwartz</td>
+          </tr>
+          <tr>
+            <td class="choix">153</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix153" class="nomChoix">Brock Boeser</td>
+          </tr>
+          <tr>
+            <td class="choix">154</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix154" class="nomChoix">Samuel Girard</td>
+          </tr>
+        </table>
+        <table id="tableRounde23" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 23</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">155</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix155" class="nomChoix">Jake Sanderson</td>
+          </tr>
+          <tr>
+            <td class="choix">156</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix156" class="nomChoix">Matt Dumba</td>
+          </tr>
+          <tr>
+            <td class="choix">157</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix157" class="nomChoix">Oliver Kylington</td>
+          </tr>
+          <tr>
+            <td class="choix">158</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix158" class="nomChoix">Tomas Hertl</td>
+          </tr>
+          <tr>
+            <td class="choix">159</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix159" class="nomChoix">Marco Rossi</td>
+          </tr>
+          <tr>
+            <td class="choix">160</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix160" class="nomChoix">Blake Wheeler</td>
+          </tr>
+          <tr>
+            <td class="choix">161</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix161" class="nomChoix">Mark Stone</td>
+          </tr>
+        </table>
+        <table id="tableRounde24" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 24</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">162</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix162" class="nomChoix">Erik Karlsson</td>
+          </tr>
+          <tr>
+            <td class="choix">163</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix163" class="nomChoix">Artturi Lehkonen</td>
+          </tr>
+          <tr>
+            <td class="choix">164</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix164" class="nomChoix">Scott Perunovich</td>
+          </tr>
+          <tr>
+            <td class="choix">165</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix165" class="nomChoix">Alex Tuch</td>
+          </tr>
+          <tr>
+            <td class="choix">166</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix166" class="nomChoix">Brandon Montour</td>
+          </tr>
+          <tr>
+            <td class="choix">167</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix167" class="nomChoix">Dawson Mercer</td>
+          </tr>
+          <tr>
+            <td class="choix">168</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix168" class="nomChoix">Phil Kessel</td>
+          </tr>
+        </table>
+        <table id="tableRounde25" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 25</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">169</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix169" class="nomChoix">Mats Zuccarello</td>
+          </tr>
+          <tr>
+            <td class="choix">170</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix170" class="nomChoix">Rickard Rakell</td>
+          </tr>
+          <tr>
+            <td class="choix">171</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix171" class="nomChoix">Cole Sillinger</td>
+          </tr>
+          <tr>
+            <td class="choix">172</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix172" class="nomChoix">Alexandre Carrier</td>
+          </tr>
+          <tr>
+            <td class="choix">173</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix173" class="nomChoix">Adam Boqvist</td>
+          </tr>
+          <tr>
+            <td class="choix">174</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix174" class="nomChoix">Ilya Mikheyev</td>
+          </tr>
+          <tr>
+            <td class="choix">175</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix175" class="nomChoix">Cam York</td>
+          </tr>
+        </table>
+        <table id="tableRounde26" class="tableDraft">
+          <tr>
+            <th colspan="3">Rounde 26</th>
+          </tr>
+          <tr>
+            <th>Choix Total</th>
+            <th>Équipe</th>
+            <th>Joueur</th>
+          </tr>
+          <tr>
+            <td class="choix">176</td>
+            <td>Canadiens Français de la Rivière aux Graines</td>
+            <td id="Draft2022choix176" class="nomChoix">Josh Morrissey</td>
+          </tr>
+          <tr>
+            <td class="choix">177</td>
+            <td>Enculés de Westmount</td>
+            <td id="Draft2022choix177" class="nomChoix">
+              Jonathan Marchessault
+            </td>
+          </tr>
+          <tr>
+            <td class="choix">178</td>
+            <td>Chiennes de Granby</td>
+            <td id="Draft2022choix178" class="nomChoix">Simon Edvindsson</td>
+          </tr>
+          <tr>
+            <td class="choix">179</td>
+            <td>Dream Team de Saint-Pie-X</td>
+            <td id="Draft2022choix179" class="nomChoix">Logan Thompson</td>
+          </tr>
+          <tr>
+            <td class="choix">180</td>
+            <td>Consanguins de Laterrière</td>
+            <td id="Draft2022choix180" class="nomChoix">Chandler Stephenson</td>
+          </tr>
+          <tr>
+            <td class="choix">181</td>
+            <td>Les Ptit-Pains Fourrés de Limoilou</td>
+            <td id="Draft2022choix181" class="nomChoix">Marc-André Fleury</td>
+          </tr>
+          <tr>
+            <td class="choix">182</td>
+            <td>Vidanges de Rimouski</td>
+            <td id="Draft2022choix182" class="nomChoix">Phillip Danault</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  </body>
 </html>
