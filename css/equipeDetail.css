@@ -54,3 +54,22 @@
     font-size: smaller;
     color: #939292;
 }
+@media only screen and (min-device-width: 320px) and (max-device-width: 1154px) {
+    #picks{
+        grid-column: unset;
+    }
+    #resumeTeam{
+        grid-column-start: unset;
+        grid-column-end: unset;
+    }
+
+    #imgTeamInfo{
+        float: initial;
+        position: relative;
+        left: 50%;
+        transform: translateX(-68%);
+    }
+    #content{
+        height: unset;
+    }
+}

@@ -187,7 +187,7 @@ nav li a {
 .logoTeam{
 	height: 27px;
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 1154px) {
 	#content .tablePrincipal {
 		grid-row-start: 2;
 		grid-row-end: 2;
@@ -217,8 +217,9 @@ nav li a {
 	}
 	header nav ul li{
 		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
 		top: 250px;
-		left: 25%;
 	}
 	#live{
 		margin-bottom: 70px;
@@ -249,6 +250,7 @@ nav li a {
 		top: 0;
 		background-color: black;
 		opacity: 90%;
+		z-index: 1;
 	}
 	.container-aff-oui img{
 		width: 30px;
