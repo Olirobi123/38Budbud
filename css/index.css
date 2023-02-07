@@ -59,12 +59,3 @@
     background-color: black;
     font-weight: bold;
 }
-#top10Points td{
-    text-align: center;
-}
-#top10Points td, #top10Points th{
-    border: 2px solid black;
-}
-#top10Points{
-    border-collapse: collapse;
-}

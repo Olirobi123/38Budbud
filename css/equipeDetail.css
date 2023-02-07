@@ -1,0 +1,56 @@
+#mainEquipe h1 {
+    text-align: center;
+}
+
+#content div {
+    background-color: #181b23;
+    border-radius: 5px;
+}
+
+.titre {
+    background-color: black;
+    border-radius: 5px;
+    width: 95%;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.legend {
+    font-weight: 300;
+    font-size: smaller;
+}
+
+#picks {
+    grid-column: 3;
+    text-align: center;
+}
+
+#resumeTeam {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+}
+
+#imgTeamInfo {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    float: left;
+    border: 2px solid black;
+    margin-top: 5px;
+    margin-left: 30px;
+    margin-right: 5px;
+}
+
+#awardsDiv {
+    text-align: left;
+}
+
+#awardsDiv span, #awardsDiv h3 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.spanDetaille {
+    font-size: smaller;
+    color: #939292;
+}

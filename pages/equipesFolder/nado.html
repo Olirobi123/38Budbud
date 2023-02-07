@@ -1,20 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>38Budbud</title>
-        <script src="../../js/liveFeed.js" defer></script>
-    </head>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>38Budbud</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/equipeDetail.css">
+    <script src="../../js/équipes.js"></script>
+    <script src="../../js/liveFeed.js" defer></script>
+    <script src="../../js/equipesDetail.js" defer></script>
+</head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <a href="index.html">38budbud</a>
+                <a href="../../index.html">38budbud</a>
             </div>
             <ul>
-                <li> <a href="pages/equipe.html">Équipes</a></li>
-                <li><a href="pages/echanges.html">Échanges</a></li>
-                <li><a href="pages/draft.html">Repêchage</a></li>
+                <li> <a href="../equipe.html">Équipes</a></li>
+                <li><a href="../echanges.html">Échanges</a></li>
+                <li><a href="../draft.html">Repêchage</a></li>
                 <li><a href="https://www.marqueur.com/hockey/mbr/tools/pool/index.php?nyx=190707" target="_blank">Marqueur</a></li>
                 <li id="li-recherche"><input id="rechercheJoueur" placeholder="Entrez le nom d'un joueur"></li>
             </ul>
@@ -27,10 +32,10 @@
         </div>
         <div id="mobile-menu">
             <ul id="mobile-menu-ul" class="container-aff-non">
-                <li class="cacher" id="xImageLi"><img src="images/x.png" id="xImage"></li>
-                <li class="cacher"><a href="pages/equipe.html">Équipes</a></li>
-                <li class="cacher"><a href="pages/echanges.html">Échanges</a></li>
-                <li class="cacher"><a href="pages/draft.html">Repêchage</a></li>
+                <li class="cacher" id="xImageLi"><img src="../../images/x.png" id="xImage"></li>
+                <li class="cacher"><a href="../equipe.html">Équipes</a></li>
+                <li class="cacher"><a href="../echanges.html">Échanges</a></li>
+                <li class="cacher"><a href="../draft.html">Repêchage</a></li>
                 <li class="cacher"><a href="https://www.marqueur.com/hockey/mbr/tools/pool/index.php?nyx=190707" target="_blank">Marqueur</a></li>
             </ul>
         </div>
@@ -39,5 +44,18 @@
     <section id="live">
 
     </section>
+    <section id="mainEquipe">
+        <div id="content" data-team="Vidanges de Rimouski">
+            <div id="resumeTeam">
+                <h1 class="titre">Vidanges de Rimouski</h1>
+            </div>
+            <div id="picks">
+                <h2 class="titre">CHOIX AU REPÊCHAGE</h2>
+            </div>
+            
+        </div>
+    </section>
+    
+
 </body>
 </html>

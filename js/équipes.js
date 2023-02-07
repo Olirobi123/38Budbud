@@ -15,7 +15,14 @@ let equipesJSON = {
                     '4th round pick 2024',
                     '5th round pick 2024',
                     '6th round pick 2024',
-                ]
+                ],
+                "awards":{
+                    "general":[],
+                    "playoff":[],
+                    "attaque":[],
+                    "defense":[],
+                    "gardien":[]
+                }
             },
             "Consanguins de Laterrière":{
                 "nom": "Consanguins de Laterrière",
@@ -38,7 +45,14 @@ let equipesJSON = {
                     '4th round pick 2024',
                     '5th round pick 2024',
                     '6th round pick 2024',
-                ]
+                ],
+                "awards":{
+                    "general":[],
+                    "playoff":[],
+                    "attaque":[],
+                    "defense":[],
+                    "gardien":[]
+                }
         },
             "Chiennes de Granby":{
                 "nom": "Chiennes de Granby",
@@ -62,7 +76,14 @@ let equipesJSON = {
                     '4th round pick 2024',
                     '5th round pick 2024',
                     '6th round pick 2024',
-                ]
+                ],
+                "awards":{
+                    "general":[],
+                    "playoff":[],
+                    "attaque":[],
+                    "defense":[],
+                    "gardien":[]
+                }
             },
             "Dream Team de Saint-Pie-X":{
                 "nom": "Dream Team de Saint-Pie-X",
@@ -79,7 +100,14 @@ let equipesJSON = {
                     '4th round pick 2024',
                     '5th round pick 2024',
                     '6th round pick 2024',
-                ]
+                ],
+                "awards":{
+                    "general":[],
+                    "playoff":[],
+                    "attaque":[],
+                    "defense":[],
+                    "gardien":[]
+                }
             },
             "Vidanges de Rimouski":{
                 "nom": "Vidanges de Rimouski",
@@ -95,7 +123,14 @@ let equipesJSON = {
                     '4th round pick 2024',
                     '5th round pick 2024',
                     '6th round pick 2024',
-                ]
+                ],
+                "awards":{
+                    "general":[],
+                    "playoff":[],
+                    "attaque":[],
+                    "defense":[],
+                    "gardien":[]
+                }
             },
             "Les Ptit-Pains Fourrés de Limoilou":{
                 "nom": "Les Ptit-Pains Fourrés de Limoilou",
@@ -117,7 +152,14 @@ let equipesJSON = {
                     '4th round pick 2024',
                     '5th round pick 2024',
                     '6th round pick 2024',
-                ]
+                ],
+                "awards":{
+                    "general":[],
+                    "playoff":[],
+                    "attaque":[],
+                    "defense":[],
+                    "gardien":[]
+                }
             },
             "Enculés de Westmount":{
                 "nom": "Enculés de Westmount",
@@ -139,7 +181,14 @@ let equipesJSON = {
                     '4th round pick 2024',
                     '5th round pick 2024',
                     '6th round pick 2024',
-                ]
+                ],
+                "awards":{
+                    "general":[],
+                    "playoff":[],
+                    "attaque":[],
+                    "defense":[],
+                    "gardien":[]
+                }
         }
 
     }
