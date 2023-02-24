@@ -1,5 +1,5 @@
 "use strict"
-const proxy = 'https://api.allorigins.win/raw?url='
+const proxy = 'https://api.allorigins.win/get?url='
 const currentSeason = '20222023'
 
 function liveFeed() {
@@ -33,7 +33,7 @@ function getActivePlayerId(name) {
 
     let returnValue = false
     try {
-        returnValue = parseInt(JSON.parse(player.response).suggestions[0].slice(0, 7));
+        returnValue = parseInt(JSON.parse(player.response).contents.slice(17, 24));
     } catch (error) {
         alert('Le joueur suivant n\'exite pas.\nVérifiez si le joueur est apte a être selectionné par un club de la 38Budbud. Si oui, vérifiez l\'ortographe')
     }
