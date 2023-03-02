@@ -128,6 +128,34 @@ let tradesJson = {
                 "team1Receives": "Jack Eichel<br>Alex Newhook<br>John Gibson<br>2nd round pick 2024",
                 "team2": CO,
                 "team2Receives": "Aleksander Barkov<br>Brandon Montour"
+            },
+            {
+                "date": "1er mars",
+                "team1": OLI,
+                "team1Receives": "Luke Hughes<br>Morgan Rielly<br>Matt Murray<br>1nd round pick 2023",
+                "team2": ANDREW,
+                "team2Receives": "Rasmus Dahlin<br>3th round pick 2023"
+            },
+            {
+                "date": "1er mars",
+                "team1": OLI,
+                "team1Receives": "Trevor Zegras<br>Johnny Gaudreau<br>Miro Heiskanen<br>Jamie Drysdale<br>1st round pick 2024",
+                "team2": CO,
+                "team2Receives": "Matthew Tkachuk<br>Brady Tkachuk<br>Jake Sanderson"
+            },
+            {
+                "date": "1er mars",
+                "team1": OLI,
+                "team1Receives": "Mathew Barzal",
+                "team2": SAM,
+                "team2Receives": "Martin Jones<br>4th round pick 2023<br>5th round pick 2023<br>6th round pick 2023"
+            },
+            {
+                "date": "1er mars",
+                "team1": NADO,
+                "team1Receives": "Matthew Boldy<br>Jordan Kyrou<br>Drake Batherson<br>Matt Duchene<br>Tristan Jarry<br>Cam Talbot<br>Rasmus Andersson<br>1st round pick 2024<br>3rd round pick 2024<br>6th round pick(VIA OLI)",
+                "team2": SAM,
+                "team2Receives": "Sidney Crosby<br>John Tavares<br>Mika Zibanejad<br>Claude Giroux<br>Brent Burns"
             }
         ]
     }
