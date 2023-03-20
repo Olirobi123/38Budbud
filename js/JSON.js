@@ -153,9 +153,16 @@ let tradesJson = {
             {
                 "date": "1er mars",
                 "team1": NADO,
-                "team1Receives": "Matthew Boldy<br>Jordan Kyrou<br>Drake Batherson<br>Matt Duchene<br>Tristan Jarry<br>Cam Talbot<br>Rasmus Andersson<br>1st round pick 2024<br>3rd round pick 2024<br>6th round pick(VIA OLI)",
+                "team1Receives": "Matthew Boldy<br>Jordan Kyrou<br>Drake Batherson<br>Matt Duchene<br>Tristan Jarry<br>Cam Talbot<br>Rasmus Andersson<br>1st round pick 2024<br>3rd round pick 2024<br>6th round pick 2023 (VIA OLI)",
                 "team2": SAM,
                 "team2Receives": "Sidney Crosby<br>John Tavares<br>Mika Zibanejad<br>Claude Giroux<br>Brent Burns"
+            },
+            {
+                "date": "3 mars",
+                "team1": CO,
+                "team1Receives": "Brayden Pount<br>Kyle Connor",
+                "team2": ANDREW,
+                "team2Receives": "Auston Matthews<br>Aleksander Barkov"
             }
         ]
     }

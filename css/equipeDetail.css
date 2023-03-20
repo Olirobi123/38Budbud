@@ -20,9 +20,12 @@
     font-size: smaller;
 }
 
-#picks {
+#picks{
     grid-column: 3;
-    text-align: center;
+    text-align: left;
+}
+#picksParagraphe{
+    padding-left: 20px;
 }
 
 #resumeTeam {
@@ -43,6 +46,7 @@
 
 #awardsDiv {
     text-align: left;
+    padding: 20px;
 }
 
 #awardsDiv span, #awardsDiv h3 {

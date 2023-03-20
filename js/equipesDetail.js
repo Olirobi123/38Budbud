@@ -14,7 +14,7 @@ function remplirTabQuestions(jsonData, nom) {
 
 function afficherPicks(data) {
     for (let i = 0; i < data.picks.length; i++) {
-        document.getElementById("picks").innerHTML += data.picks[i] + "<br>"
+        document.getElementById("picksParagraphe").innerHTML += data.picks[i] + "<br>"
     }
 }
 function creerSpanDetaille() {
@@ -133,6 +133,8 @@ function genererImage(nomTeam) {
 function genererPage() {
     let nomTeam = getEquipe()
     let data = remplirTabQuestions(equipesJSON, nomTeam)
+    let p = document.getElementById("picks").appendChild(document.createElement("p"));
+    p.id = "picksParagraphe";
     afficherPicks(data);
     genererImage(nomTeam);
     afficherAwards(data.awards);

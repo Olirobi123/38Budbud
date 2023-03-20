@@ -212,6 +212,7 @@ nav li a {
 	#content {
 		grid-template: unset;
 		grid-template-rows: unset;
+		width: unset;
 	}
 	#infoJoueur {
 		grid-row-start: 1;
