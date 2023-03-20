@@ -108,8 +108,15 @@ function genererPageJoueur(id) {
         if (document.querySelector('#tradesSection h1')) {
             document.querySelector('#tradesSection h1').remove();
         } else if (document.querySelector('#draftSection h1')) {
-            document.querySelector('#draftSection h1').remove();
-        } else if (document.querySelector('#equipeSectionSection h1')) {
+           while (document.querySelectorAll('#draftSection h1').length > 0){
+                document.querySelector('#draftSection h1').remove();
+           }
+            var ballotageDiv = document.getElementsByClassName('ballotageDiv');
+
+            while(ballotageDiv[0]) {
+                ballotageDiv[0].parentNode.removeChild(ballotageDiv[0]);
+            }
+        } else if (document.querySelector('#equipeSection h1')) {
             document.querySelector('#equipeSection h1').remove();
         }
 

@@ -30,7 +30,6 @@ function creerSpanNormal() {
 }
 
 function afficherDernieresVictoires(id, data) {
-    console.log(data)
     let span = document.getElementById(id)
     span.innerText = " ("
     for (let i = data.length - 1; i >= 0; i--) {
@@ -45,7 +44,6 @@ function afficherDernieresVictoires(id, data) {
 }
 
 function afficherAwards(data) {
-    console.log(data)
     let awards = resumeTeam.appendChild(document.createElement("div"))
     awards.id = "awardsDiv";
     let titre = awards.appendChild(document.createElement("h3"))
