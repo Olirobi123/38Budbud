@@ -16,9 +16,9 @@ let equipesJSON = {
                     '6th round pick 2024',
                 ],
                 "awards":{
-                    "general":[],
-                    "playoff":[],
-                    "attaque":[],
+                    "general":["2022-2023"],
+                    "playoff":["2022-2023"],
+                    "attaque":["2022-2023"],
                     "defense":[],
                     "gardien":[]
                 }
@@ -50,7 +50,7 @@ let equipesJSON = {
                     "playoff":[],
                     "attaque":[],
                     "defense":[],
-                    "gardien":[]
+                    "gardien":["2022-2023"]
                 }
         },
             "Chiennes de Granby":{
@@ -157,7 +157,7 @@ let equipesJSON = {
                     "general":[],
                     "playoff":[],
                     "attaque":[],
-                    "defense":[],
+                    "defense":["2022-2023"],
                     "gardien":[]
                 }
             },

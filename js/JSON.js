@@ -160,7 +160,7 @@ let tradesJson = {
             {
                 "date": "3 mars",
                 "team1": CO,
-                "team1Receives": "Brayden Pount<br>Kyle Connor",
+                "team1Receives": "Brayden Point<br>Kyle Connor",
                 "team2": ANDREW,
                 "team2Receives": "Auston Matthews<br>Aleksander Barkov"
             }
