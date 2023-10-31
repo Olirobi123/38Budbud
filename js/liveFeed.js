@@ -38,7 +38,7 @@ function getActivePlayerId(name) {
 	let player = new XMLHttpRequest();
 	player.open(
 		"GET",
-		"https://search.d3.nhle.com/api/v1/search/player?culture=fr-ca&limit=4&q=" +
+		"https://search.d3.nhle.com/api/v1/search/player?culture=fr-ca&limit=1&q=" +
 			name +
 			"&active=true",
 		false
@@ -51,6 +51,7 @@ function getActivePlayerId(name) {
 		id = parseInt(response[0].playerId);
 	}
 
+	console.log(response);
 	return id;
 }
 
